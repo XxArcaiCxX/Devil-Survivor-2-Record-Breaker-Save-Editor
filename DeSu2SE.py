@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import ttk
 import os
 import sys
 
@@ -1573,6 +1574,7 @@ class mytestapp(tk.Tk):
         self.charValues = {}
         self.deValues = {}
         self.miscValues = {}
+        self.charNameList = []
         self.charList = []
         self.demonList = []
         self.vcmd = (self.register(self.validate_int), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
@@ -1622,6 +1624,153 @@ class mytestapp(tk.Tk):
             folderpathFrame, textvariable=self.saveFilePathTxt, state='readonly', width=80
         ).grid(column=1, row=1, sticky="EW", padx="5 0")
 
+        # Frame for tab buttons
+        tabButtonsFrame = tk.Frame(mainFrame)
+        tabButtonsFrame.grid(column=0, row=2, pady="20 0", sticky="EW")
+        self.tab1Button = tk.Button(
+            tabButtonsFrame, text="Characters", relief="sunken", state="disabled",
+            command=lambda: self.changeTab(self.tab1Frame, self.tab1Button)
+        )
+        self.tab1Button.grid(column=0, row=0, sticky="W")
+        self.tab2Button = tk.Button(
+            tabButtonsFrame, text="Demons",
+            command=lambda: self.changeTab(self.tab2Frame, self.tab2Button)
+        )
+        self.tab2Button.grid(column=1, row=0, sticky="W")
+
+        # Frame for tab frames
+        tabFramesFrame = tk.Frame(mainFrame)
+        tabFramesFrame.grid(column=0, row=3, sticky="EW")
+        tabFramesFrame.columnconfigure(0, weight=1)
+
+        # Frame for 1st tab
+        tab1Frame = tk.Frame(tabFramesFrame, bd="2", relief="sunken", padx="10", pady="10")
+        self.tab1Frame = tab1Frame
+        tab1Frame.grid(column=0, row=0, sticky="EW")
+        self.charValues["level"] = tk.StringVar()
+        self.charValues["max_hp"] = tk.StringVar()
+        self.charValues["max_mp"] = tk.StringVar()
+        self.charValues["curr_hp"] = tk.StringVar()
+        self.charValues["curr_mp"] = tk.StringVar()
+        self.charValues["stats"] = []
+        self.charValues["skills"] = []
+
+        # Top inner frame for 1st tab
+        tab1TopFrame = tk.Frame(tab1Frame)
+        tab1TopFrame.grid(column=0, row=0, columnspan=2, sticky="NW")
+
+        # Top left inner frame for 1st tab
+        tab1TopLFrame = tk.Frame(tab1TopFrame)
+        tab1TopLFrame.grid(column=0, row=0, sticky="NW")
+        tab1ComboLabel = tk.Label(tab1TopLFrame, text="Select Character")
+        tab1ComboLabel.grid(column=1, row=0)
+        tab1ComboBox = ttk.Combobox(tab1TopLFrame, values=self.charNameList)
+        tab1ComboBox.grid(column=2, row= 0, padx=10, pady=10)
+
+        # Labels
+        tab1LVL = tk.Label(tab1TopLFrame, text="Level:", padx=50)
+        tab1LVL.grid(column=0, row=1)
+        tab1EXP = tk.Label(tab1TopLFrame, text="Experience:")
+        tab1EXP.grid(column=0, row=2)
+        tab1HP = tk.Label(tab1TopLFrame, text="Health:")
+        tab1HP.grid(column=0, row=3)
+        tab1MP = tk.Label(tab1TopLFrame, text="Mana:")
+        tab1MP.grid(column=0, row=4)
+        tab1ST = tk.Label(tab1TopLFrame, text="Strength:")
+        tab1ST.grid(column=0, row=5)
+        tab1MA = tk.Label(tab1TopLFrame, text="Magic:")
+        tab1MA.grid(column=0, row=6)
+        tab1VI = tk.Label(tab1TopLFrame, text="Vitality:")
+        tab1VI.grid(column=0, row=7)
+        tab1AG = tk.Label(tab1TopLFrame, text="Agility:")
+        tab1AG.grid(column=0, row=8)
+        tab1CMD1 = tk.Label(tab1TopLFrame, text="Command 1:")
+        tab1CMD1.grid(column=2, row=1)
+        tab1CMD2 = tk.Label(tab1TopLFrame, text="Command 2:")
+        tab1CMD2.grid(column=2, row=2)
+        tab1CMD3 = tk.Label(tab1TopLFrame, text="Command 3:")
+        tab1CMD3.grid(column=2, row=3)
+        tab1PAS1 = tk.Label(tab1TopLFrame, text="Passive 1:")
+        tab1PAS1.grid(column=2, row=4)
+        tab1PAS2 = tk.Label(tab1TopLFrame, text="Passive 2:")
+        tab1PAS2.grid(column=2, row=5)
+        tab1PAS3 = tk.Label(tab1TopLFrame, text="Passive 3:")
+        tab1PAS3.grid(column=2, row=6)
+        tab1RAC = tk.Label(tab1TopLFrame, text="Automatic:")
+        tab1RAC.grid(column=2, row=7)
+        tab1MOV = tk.Label(tab1TopLFrame, text="Move:")
+        tab1MOV.grid(column=2, row=8)
+
+        # Text Boxes
+        tab1txtbLVL = tk.Entry(tab1TopLFrame)
+        tab1txtbLVL.grid(column=1, row=1)
+        tab1txtbEXP = tk.Entry(tab1TopLFrame)
+        tab1txtbEXP.grid(column=1, row=2)
+        tab1txtbHP = tk.Entry(tab1TopLFrame)
+        tab1txtbHP.grid(column=1, row=3)
+        tab1txtbMP = tk.Entry(tab1TopLFrame)
+        tab1txtbMP.grid(column=1, row=4)
+        tab1txtbST = tk.Entry(tab1TopLFrame)
+        tab1txtbST.grid(column=1, row=5)
+        tab1txtbMA = tk.Entry(tab1TopLFrame)
+        tab1txtbMA.grid(column=1, row=6)
+        tab1txtbVI = tk.Entry(tab1TopLFrame)
+        tab1txtbVI.grid(column=1, row=7)
+        tab1txtbAG = tk.Entry(tab1TopLFrame)
+        tab1txtbAG.grid(column=1, row=8)
+        tab1txtbCMD1 = tk.Entry(tab1TopLFrame)
+        tab1txtbCMD1.grid(column=3, row=1)
+        tab1txtbCMD2 = tk.Entry(tab1TopLFrame)
+        tab1txtbCMD2.grid(column=3, row=2)
+        tab1txtbCMD3 = tk.Entry(tab1TopLFrame)
+        tab1txtbCMD3.grid(column=3, row=3)
+        tab1txtbPAS1 = tk.Entry(tab1TopLFrame)
+        tab1txtbPAS1.grid(column=3, row=4)
+        tab1txtbPAS2 = tk.Entry(tab1TopLFrame)
+        tab1txtbPAS2.grid(column=3, row=5)
+        tab1txtbPAS3 = tk.Entry(tab1TopLFrame)
+        tab1txtbPAS3.grid(column=3, row=6)
+        tab1txtbRAC = tk.Entry(tab1TopLFrame)
+        tab1txtbRAC.grid(column=3, row=7)
+        tab1txtbMOV = tk.Entry(tab1TopLFrame)
+        tab1txtbMOV.grid(column=3, row=8)
+
+        tab1emptylabel = tk.Label(tab1TopLFrame, text="   ")
+        tab1emptylabel.grid(column=0, row= 9)
+
+        # Skill Frame
+        tab1SkillFrame = tk.Frame(tab1TopLFrame, bd="2", relief="sunken")
+        tab1SkillFrame.grid(column=0, row=11, columnspan=4)
+
+        # Skill Labels
+        tab1CMD1label = tk.Label(tab1SkillFrame, text="Command")
+        tab1CMD1label.grid(column=0, row=0)
+        tab1CMD2label = tk.Label(tab1SkillFrame, text="Passive")
+        tab1CMD2label.grid(column=1, row=0)
+        tab1CMD3label = tk.Label(tab1SkillFrame, text="Automatic")
+        tab1CMD3label.grid(column=2, row=0)
+
+        # Listboxes
+        tab1ListBoxCMD = tk.Listbox(tab1SkillFrame)
+        tab1ListBoxCMD.grid(column=0, row=1)
+
+        tab1ListBoxPAS = tk.Listbox(tab1SkillFrame)
+        tab1ListBoxPAS.grid(column=1, row=1)
+
+        tab1ListBoxAUT = tk.Listbox(tab1SkillFrame)
+        tab1ListBoxAUT.grid(column=2, row=1)
+
+        # Bottom Frame
+        tab1BtmFrame = tk.Frame(tab1Frame, bd="2", relief="sunken")
+        tab1BtmFrame.grid(column=0, row=2, columnspan=2, sticky="EW", pady="20 0")
+        tab1BtmFrame.columnconfigure(0, weight=1)
+        tk.Button(
+            tab1BtmFrame, text="Apply", command=self.applyCharChange
+        ).grid(column=0, row=0, sticky="EW")
+
+        # Frame for 2nd Tab
+
+
     def validate_int(self, action, index, value_if_allowed,
                      prior_value, text, validation_type, trigger_type, widget_name):
         if action == "0":
@@ -1661,7 +1810,7 @@ class mytestapp(tk.Tk):
                     c_rac_add = c_start_add + int(CHAR_RAC[0], 16)
 
                     c_info = {
-                        "start_add": c_lvl_add,
+                        "start_add": c_start_add,
                         "id": int(self.getHexStr(self.save_bytes, c_id_add, CHAR_ID[1], add_is_dec=True), 16),
                         "level": int(self.getHexStr(self.save_bytes, c_lvl_add, CHAR_LVL[1], add_is_dec=True), 16),
                         "exp": int(self.getHexStr(self.save_bytes, c_exp_add, CHAR_EXP[1], add_is_dec=True), 16),
@@ -1681,6 +1830,7 @@ class mytestapp(tk.Tk):
                     }
                     self.charList.append(c_info)
                     char_info = ALL_CHARS[char_id]
+                    self.charNameList.append(char_info)
                     print("Start Address: %x, Char ID: %s, Name: %s." % (c_info["start_add"], char_id, char_info))
 
             # For 2nd Tab (Demons)
@@ -1734,16 +1884,10 @@ class mytestapp(tk.Tk):
             self.miscValues["macca"].set(macca)
             print("Macca: %d" % macca)
 
-    def applyMCChanges(self):
+    def applyCharChange(self):
         return
 
-    def applyMiscChanges(self):
-        return
-
-    def applyItemChanges(self):
-        return
-
-    def applyDeChanges(self):
+    def applyDemonChange(self):
         return
 
     def writeHexBytes(self, byte_arr, hex_str, start_add, num_bytes, skip_bytes=None, add_is_dec=False):
@@ -1796,7 +1940,6 @@ class mytestapp(tk.Tk):
             sel_file = sel_file[0]
             # print(sel_file)
             if os.path.isfile(sel_file):
-                self.initVars()
                 self.saveFilePathTxt.set(sel_file)
                 self.saveFilePath = sel_file
                 self.saveFileDir = os.path.dirname(sel_file)
