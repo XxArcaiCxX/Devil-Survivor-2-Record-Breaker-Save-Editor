@@ -64,7 +64,41 @@ SKILL_DMG = ("Zero", "Weak", "Medium", "Heavy", "Severe",
 SKILL_TARGET = ("Single", "Multiple", "Enemies", "Self",
                 "Ally", "Allies", "All", "Unknown")
 
-SKILL_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+CMD_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
+             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
+             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
+             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
+             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
+             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
+             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
+             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
+             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
+             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
+             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
+             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
+             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
+             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
+             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+
+PAS_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
+             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
+             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
+             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
+             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
+             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
+             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
+             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
+             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
+             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
+             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
+             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
+             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
+             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
+             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+
+AUTO_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
              '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
              '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
@@ -91,8 +125,6 @@ ALL_SKILLS = {
     "7": ("Fire Breath", 0, 17, 1, 1, "1~4 hits weak Fire damage. Multiple enemies."),
     "8": ("Trisagion", 0, 18, 4, 0, "Severe Fire damage. 1 enemy"),
     "9": ("Ragnarok", 0, 31, 2, 1, "1~4 hits medium Fire damage. Muliple enemies."),
-    "102": ("Sunny Ray", 0, 1, 1, 2, "Weak Fire damage. 70% Poison. All enemies."),
-    "138": ("Inferno of God", 0, 46, 3, 2, "Heavy Fire damage. Pierce enemy Fire Resist/Null/Drain. All enemies."),
     "a": ("Bufu", 1, 1, 1, 0, "Weak Ice damage. 1 enemy."),
     "b": ("Bufula", 1, 4, 2, 0, "Medium Ice damage. 1 enemy."),
     "c": ("Bufudyne", 1, 10, 3, 0, "Heavy Ice damage. 1 enemy."),
@@ -103,8 +135,6 @@ ALL_SKILLS = {
     "11": ("Glacial Blast", 1, 18, 2, 1, "1~4 hits medium Ice damage. Multiple enemies."),
     "12": ("Cold World", 1, 46, 3, 2, "Heavy Ice damage. 15% KO. All enemies."),
     "4c": ("Breath", 1, 20, 2, 1, "1~5 hits medium Ice damage. Multiple enemies."),
-    "134": ("Hailstorm of God", 1, 46, 3, 2, "Heavy Ice damage. Pierce enemy Ice Resist/Null/Drain. All enemies."),
-    "13b": ("Refrigerate", 9, 22, 1, 1, "1~8 hits weak Ice damage. Multiple enemies."),
     "13": ("Zio", 2, 1, 1, 0, "Weak Elec damage. 1 enemy."),
     "14": ("Zionga", 2, 4, 2, 0, "Medium Elec damage. 1 enemy."),
     "15": ("Ziodyne", 2, 10, 3, 0, "Heavy Elec damage. 1 enemy."),
@@ -114,8 +144,6 @@ ALL_SKILLS = {
     "19": ("Shock", 2, 17, 1, 1, "1~4 hits weak Elec damage. Muliple enemies."),
     "1a": ("Thunder Reign", 2, 18, 4, 2, "Severe Elec damage. All enemies."),
     "1b": ("Charming Bolt", 2, 41, 3, 2, "Heavy Elec damage. 25% Panic. All enemies."),
-    "12e": ("Lightning of God", 2, 46, 3, 2, "Heavy Elec damage. Pierce enemy Elec Resist/Null/Drain. All enemies."),
-    "139": ("Plasma Discharge", 2, 18, 1, 1, "1~8 hits weak Elec damage. Multiple enemies."),
     "1c": ("Zan", 3, 1, 1, 0, "Weak Force damage. 1 enemy."),
     "1d": ("Zanma", 3, 4, 2, 0, "Medium Force damage. 1 enemy."),
     "1e": ("Zandyne", 3, 10, 3, 0, "Heavy Force damage. 1 enemy."),
@@ -125,7 +153,6 @@ ALL_SKILLS = {
     "22": ("Wind Breath", 3, 17, 1, 1, "1~4 hits weak Force damage. Muliple enemies."),
     "23": ("Deadly Wind", 3, 18, 4, 0, "Severe Force damage. 1 enemy."),
     "24": ("Floral Gust", 3, 31, 2, 1, "1~4 hits medium Force damage. Muliple enemies."),
-    "132": ("Tornado of God", 3, 46, 3, 2, "Heavy Force damage. Pierce enemy Force Resist/Null/Drain. All enemies."),
     "25": ("Megido", 4, 21, 1, 2, "Weak Almighty damage. All enemies."),
     "26": ("Megidola", 4, 36, 2, 2, "Medium Almighty damage. All enemies."),
     "27": ("Megidolaon", 4, 56, 3, 2, "Heavy Almighty damage. All enemies."),
@@ -352,7 +379,16 @@ ALL_CHARS = {
     "0": "MC",
     "40006": "Fumi",
     "30005": "Yamato",
-    "9000b": "Keita"
+    "9000b": "Keita",
+    "8000a": "Makoto",
+    "70009": "Jungo",
+    "a000c": "Airi",
+    "b000d": "Joe",
+    "60008": "???",
+    "50007": "???",
+    "c000e": "???",
+    "20004": "???",
+    "10003": "???"
 }
 
 # Demon Information
@@ -1579,10 +1615,10 @@ class mytestapp(tk.Tk):
         self.demonList = []
         self.vcmd = (self.register(self.validate_int), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
 
-    def processList(self):
+    def processLists(self):
         skillIDNameList = []
         # max_width = 0
-        for val in SKILL_IDS:
+        for val in CMD_IDS:
             if val in ALL_SKILLS:
                 # tmp_str = val + " - " + ALL_SKILLS[val][0]
                 # if len(tmp_str) > max_width:
