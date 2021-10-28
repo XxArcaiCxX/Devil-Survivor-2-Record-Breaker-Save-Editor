@@ -384,11 +384,11 @@ ALL_CHARS = {
     "70009": "Jungo",
     "a000c": "Airi",
     "b000d": "Joe",
-    "60008": "???",
-    "50007": "???",
+    "60008": "?",
+    "50007": "??",
     "c000e": "???",
-    "20004": "???",
-    "10003": "???"
+    "20004": "????",
+    "10003": "?????"
 }
 
 # Demon Information
@@ -1595,7 +1595,7 @@ class mytestapp(tk.Tk):
         self.grid()
 
         self.initVars()
-        self.processList()
+        self.processLists()
         self.createWidgets()
         # x = (self.winfo_screenwidth() - self.winfo_reqwidth()) / 2
         # y = (self.winfo_screenheight() - self.winfo_reqheight()) / 2
@@ -1608,6 +1608,7 @@ class mytestapp(tk.Tk):
         self.saveFileName = None
         self.save_bytes = None
         self.charValues = {}
+        self.curChar = {}
         self.deValues = {}
         self.miscValues = {}
         self.charNameList = []
@@ -1643,6 +1644,7 @@ class mytestapp(tk.Tk):
         # submenu2.add_command(label="Compare difference(s)", command=self.>Diff)
         # menubar.add_cascade(label="Compare", menu=submenu2)
         menubar.add_command(label="About", command=self.aboutCreator)
+        menubar.add_command(label="Help", command=self.help)
         self.config(menu=menubar)
 
         # Main content frame
@@ -1700,8 +1702,57 @@ class mytestapp(tk.Tk):
         tab1TopLFrame.grid(column=0, row=0, sticky="NW")
         tab1ComboLabel = tk.Label(tab1TopLFrame, text="Select Character")
         tab1ComboLabel.grid(column=1, row=0)
+
+        # ComboBox
         tab1ComboBox = ttk.Combobox(tab1TopLFrame, values=self.charNameList)
+        print(self.charNameList)
         tab1ComboBox.grid(column=2, row= 0, padx=10, pady=10)
+
+        def changeCharacter(*args):
+            name = tab1ComboBox.get()
+
+            def get_key(val):
+                for char_info in self.charList:
+                    for key, value in char_info.items():
+                        if val == value:
+                            return char_info
+
+            self.curChar = get_key(name)
+            print(self.curChar)
+            tab1txtbLVL.delete(0,5)
+            tab1txtbLVL.insert(0, self.curChar["level"])
+            tab1txtbEXP.delete(0,5)
+            tab1txtbEXP.insert(0, self.curChar["exp"])
+            tab1txtbHP.delete(0,5)
+            tab1txtbHP.insert(0, self.curChar["hp"])
+            tab1txtbMP.delete(0,5)
+            tab1txtbMP.insert(0, self.curChar["mp"])
+            tab1txtbST.delete(0,5)
+            tab1txtbST.insert(0, self.curChar["st"])
+            tab1txtbMA.delete(0,5)
+            tab1txtbMA.insert(0, self.curChar["ma"])
+            tab1txtbVI.delete(0,5)
+            tab1txtbVI.insert(0, self.curChar["vi"])
+            tab1txtbAG.delete(0,5)
+            tab1txtbAG.insert(0, self.curChar["ag"])
+            tab1txtbCMD1.delete(0,5)
+            tab1txtbCMD1.insert(0, self.curChar["cmd1"])
+            tab1txtbCMD2.delete(0,5)
+            tab1txtbCMD2.insert(0, self.curChar["cmd2"])
+            tab1txtbCMD3.delete(0,5)
+            tab1txtbCMD3.insert(0, self.curChar["cmd3"])
+            tab1txtbPAS1.delete(0,5)
+            tab1txtbPAS1.insert(0, self.curChar["pas1"])
+            tab1txtbPAS2.delete(0,5)
+            tab1txtbPAS2.insert(0, self.curChar["pas2"])
+            tab1txtbPAS3.delete(0,5)
+            tab1txtbPAS3.insert(0, self.curChar["pas3"])
+            tab1txtbRAC.delete(0,5)
+            tab1txtbRAC.insert(0, self.curChar["rac"])
+            tab1txtbMOV.delete(0,5)
+            tab1txtbMOV.insert(0, self.curChar["mov"])
+
+        tab1ComboBox.bind("<<ComboboxSelected>>", changeCharacter)
 
         # Labels
         tab1LVL = tk.Label(tab1TopLFrame, text="Level:", padx=50)
@@ -1788,24 +1839,89 @@ class mytestapp(tk.Tk):
 
         # Listboxes
         tab1ListBoxCMD = tk.Listbox(tab1SkillFrame)
+        for i in range(1, len(CMD_IDS)):
+            tab1ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]][0]))
         tab1ListBoxCMD.grid(column=0, row=1)
 
         tab1ListBoxPAS = tk.Listbox(tab1SkillFrame)
+        for i in range(1, len(PAS_IDS)):
+            tab1ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]][0]))
         tab1ListBoxPAS.grid(column=1, row=1)
 
         tab1ListBoxAUT = tk.Listbox(tab1SkillFrame)
+        for i in range(1, len(AUTO_IDS)):
+            tab1ListBoxAUT.insert(i, " " + str(AUTO_IDS[i]) + " - " + str(ALL_SKILLS[AUTO_IDS[i]][0]))
         tab1ListBoxAUT.grid(column=2, row=1)
+
+        # Save Characters Changes
+        def applyCharChange(*args):
+
+            print("\n BEFORE APPLY \n " + str(self.charList))
+
+            name = tab1ComboBox.get()
+            if self.curChar != {}:
+
+                def get_key(val):
+                    i = -1
+                    for char_info in self.charList:
+                        i = i + 1
+                        for key, value in char_info.items():
+                            if val == value:
+                                return i, char_info
+
+                index, self.cur_char = get_key(name)
+
+                # put textbox values in global variable
+                self.curChar["level"] = tab1txtbLVL.get()
+                self.curChar["exp"] = tab1txtbEXP.get()
+                self.curChar["hp"] = tab1txtbHP.get()
+                self.curChar["mp"] = tab1txtbMP.get()
+                self.curChar["st"] = tab1txtbST.get()
+                self.curChar["ma"] = tab1txtbMA.get()
+                self.curChar["vi"] = tab1txtbVI.get()
+                self.curChar["ag"] = tab1txtbAG.get()
+                self.curChar["cmd1"] = tab1txtbCMD1.get()
+                self.curChar["cmd2"] = tab1txtbCMD2.get()
+                self.curChar["cmd3"] = tab1txtbCMD3.get()
+                self.curChar["pas1"] = tab1txtbPAS1.get()
+                self.curChar["pas2"] = tab1txtbPAS2.get()
+                self.curChar["pas3"] = tab1txtbPAS3.get()
+                self.curChar["rac"] = tab1txtbRAC.get()
+                self.curChar["mov"] = tab1txtbMOV.get()
+
+                print("\n AFTER APPLY \n " + str(self.charList))
+
+                # put char_info back on list
+                self.charList[index] = self.curChar
 
         # Bottom Frame
         tab1BtmFrame = tk.Frame(tab1Frame, bd="2", relief="sunken")
         tab1BtmFrame.grid(column=0, row=2, columnspan=2, sticky="EW", pady="20 0")
         tab1BtmFrame.columnconfigure(0, weight=1)
         tk.Button(
-            tab1BtmFrame, text="Apply", command=self.applyCharChange
+            tab1BtmFrame, text="Apply", command=applyCharChange
         ).grid(column=0, row=0, sticky="EW")
 
-        # Frame for 2nd Tab
 
+        # Frame for 2nd tab
+        tab2Frame = tk.Frame(tabFramesFrame, bd="2", relief="sunken", padx="10", pady="10")
+        self.tab2Frame = tab2Frame
+        tab2Frame.grid(column=0, row=0, sticky="EW")
+
+        # Top inner frame for 2nd tab
+        tab2TopFrame = tk.Frame(tab2Frame)
+        tab2TopFrame.grid(column=0, row=0, sticky="NW")
+
+        # Top left inner frame for 2nd tab
+        tab2TopLFrame = tk.Frame(tab2TopFrame)
+        tab2TopLFrame.grid(column=0, row=0, sticky="NW")
+        tab2ComboLabel = tk.Label(tab2TopLFrame, text="Select Character")
+        tab2ComboLabel.grid(column=1, row=0)
+
+        # Hide the other tabs, only show first tab
+        self.tabShown = self.tab1Frame
+        self.tabButton = self.tab1Button
+        self.tab2Frame.grid_remove()
 
     def validate_int(self, action, index, value_if_allowed,
                      prior_value, text, validation_type, trigger_type, widget_name):
@@ -1844,9 +1960,12 @@ class mytestapp(tk.Tk):
                     c_pas2_add = c_start_add + int(CHAR_PAS2[0], 16)
                     c_pas3_add = c_start_add + int(CHAR_PAS3[0], 16)
                     c_rac_add = c_start_add + int(CHAR_RAC[0], 16)
+                    c_mov_add = c_start_add + int(CHAR_MOV[0], 16)
+                    char_info = ALL_CHARS[char_id]
 
                     c_info = {
                         "start_add": c_start_add,
+                        "name": char_info,
                         "id": int(self.getHexStr(self.save_bytes, c_id_add, CHAR_ID[1], add_is_dec=True), 16),
                         "level": int(self.getHexStr(self.save_bytes, c_lvl_add, CHAR_LVL[1], add_is_dec=True), 16),
                         "exp": int(self.getHexStr(self.save_bytes, c_exp_add, CHAR_EXP[1], add_is_dec=True), 16),
@@ -1863,9 +1982,9 @@ class mytestapp(tk.Tk):
                         "pas2": int(self.getHexStr(self.save_bytes, c_pas2_add, CHAR_PAS2[1], add_is_dec=True), 16),
                         "pas3": int(self.getHexStr(self.save_bytes, c_pas3_add, CHAR_PAS3[1], add_is_dec=True), 16),
                         "rac": int(self.getHexStr(self.save_bytes, c_rac_add, CHAR_RAC[1], add_is_dec=True), 16),
+                        "mov": int(self.getHexStr(self.save_bytes, c_mov_add, CHAR_MOV[1], add_is_dec=True), 16),
                     }
                     self.charList.append(c_info)
-                    char_info = ALL_CHARS[char_id]
                     self.charNameList.append(char_info)
                     print("Start Address: %x, Char ID: %s, Name: %s." % (c_info["start_add"], char_id, char_info))
 
@@ -1915,16 +2034,18 @@ class mytestapp(tk.Tk):
                     self.demonList.append(d_info)
                     print("Start Address: %x, Demon ID: %s." % (d_start_add, demon_id))
 
-            # For 3rd Tab (Miscellaneous)
-            macca = int(self.getHexStr(self.save_bytes, MISC_MACCA[0], MISC_MACCA[1]), 16)
-            self.miscValues["macca"].set(macca)
-            print("Macca: %d" % macca)
-
-    def applyCharChange(self):
-        return
-
     def applyDemonChange(self):
         return
+
+    def changeTab(self, tab_to_show, tab_button):
+        if self.tabShown is tab_to_show:
+            return
+        self.tabShown.grid_remove()
+        tab_to_show.grid()
+        self.tabButton.config(state="normal", relief="raised")
+        tab_button.config(state="disabled", relief="sunken")
+        self.tabButton = tab_button
+        self.tabShown = tab_to_show
 
     def writeHexBytes(self, byte_arr, hex_str, start_add, num_bytes, skip_bytes=None, add_is_dec=False):
         hex_str = hex_str.zfill(num_bytes * 2)
@@ -1956,18 +2077,6 @@ class mytestapp(tk.Tk):
         hex_str = hex_str.lstrip("0")
         return hex_str if hex_str else "0"
 
-    def showMessage(self, type=0, title=None, message=None):
-        if not title:
-            title = "Test"
-        if not message:
-            message = "This is a test!"
-        if type == 0:
-            tk.messagebox.showinfo(title, message)
-        elif type == 1:
-            tk.messagebox.showwarning(title, message)
-        elif type == 2:
-            tk.messagebox.showerror(title, message)
-
     # Menu Functions
     def openFileChooser(self):
         sel_file = filedialog.askopenfilenames(parent=self, initialdir=os.path.dirname(os.path.realpath(sys.argv[0])),
@@ -1982,6 +2091,7 @@ class mytestapp(tk.Tk):
                 self.saveFileName = os.path.basename(sel_file)
                 print(self.saveFileName)
                 self.processSaveFile()
+                self.createWidgets()
 
     def saveChanges(self):
         if self.saveFilePath and os.path.isdir(self.saveFileDir):
@@ -2002,6 +2112,8 @@ class mytestapp(tk.Tk):
                                "\n\nCredits to:" +
                                "\nwaynelimt (GitHub) - SMT IV Save Editor from which this Editor was adapted from")
 
+    def help(self):
+        tk.messagebox.showinfo("Help", "Just don't be stupid lol")
 
 if __name__ == "__main__":
     app = mytestapp(None)
