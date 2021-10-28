@@ -100,8 +100,212 @@ RAC_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
            '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99')
 
-ALL_SKILLS = {
+CMD_SKILLS = {
     "1": "Agi",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "Bufudyne",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "Ziodyne",
+    "12": "",
+    "13": "Maziodyne",
+    "14": "",
+    "15": "",
+    "16": "",
+    "17": "Mazandyne",
+    "18": "",
+    "19": "",
+    "20": "",
+    "21": "Ice Dance",
+    "22": "",
+    "23": "",
+    "24": "Holy Dance",
+    "25": "Drain",
+    "26": "",
+    "27": "",
+    "28": "",
+    "29": "",
+    "30": "",
+    "31": "",
+    "32": "",
+    "33": "",
+    "34": "",
+    "35": "",
+    "36": "",
+    "37": "Deathbound",
+    "38": "",
+    "39": "",
+    "40": "",
+    "41": "",
+    "42": "",
+    "43": "",
+    "44": "",
+    "45": "",
+    "46": "Shield All",
+    "47": "",
+    "48": "Dia",
+    "49": "Diarahan",
+    "50": "",
+    "51": "Mediarahan",
+    "52": "",
+    "53": "",
+    "54": "Recarm",
+    "55": "",
+    "56": "",
+    "57": "",
+    "58": "",
+    "59": "",
+    "60": "",
+    "61": "",
+    "62": "",
+    "63": "",
+    "64": "",
+    "65": "",
+    "66": "Piercing Hit",
+    "67": "",
+    "68": "",
+    "69": "",
+    "70": "",
+    "71": "",
+    "72": "",
+    "73": "Assassinate",
+    "74": "",
+    "75": "Diarama",
+    "76": "",
+    "77": "",
+    "78": "",
+    "79": "",
+    "80": "",
+    "81": "Multi-strike",
+    "82": "",
+    "83": "",
+    "84": "",
+    "85": "",
+    "86": "",
+    "87": "",
+    "88": "",
+    "89": "",
+    "90": "",
+    "91": "",
+    "92": "",
+    "93": "",
+    "94": "",
+    "95": "",
+    "96": "",
+    "97": "",
+    "98": "",
+    "99": "",
+}
+
+PAS_SKILLS = {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": "",
+    "16": "",
+    "17": "Phys Amp",
+    "18": "",
+    "19": "",
+    "20": "",
+    "21": "",
+    "22": "",
+    "23": "Elec Amp",
+    "24": "",
+    "25": "",
+    "26": "",
+    "27": "",
+    "28": "",
+    "29": "",
+    "30": "",
+    "31": "",
+    "32": "Anti-Most",
+    "33": "",
+    "34": "",
+    "35": "",
+    "36": "",
+    "37": "",
+    "38": "",
+    "39": "",
+    "40": "Phys Drain",
+    "41": "",
+    "42": "",
+    "43": "Elec Drain",
+    "44": "Force Drain",
+    "45": "",
+    "46": "",
+    "47": "",
+    "48": "",
+    "49": "Force Repel",
+    "50": "",
+    "51": "",
+    "52": "",
+    "53": "",
+    "54": "",
+    "55": "",
+    "56": "",
+    "57": "",
+    "58": "",
+    "59": "Dual Shadow",
+    "60": "",
+    "61": "",
+    "62": "",
+    "63": "",
+    "64": "",
+    "65": "",
+    "66": "",
+    "67": "",
+    "68": "",
+    "69": "",
+    "70": "",
+    "71": "",
+    "72": "",
+    "73": "",
+    "74": "",
+    "75": "",
+    "76": "",
+    "77": "",
+    "78": "",
+    "79": "",
+    "80": "Mana Stream",
+    "81": "",
+    "82": "",
+    "83": "",
+    "84": "",
+    "85": "",
+    "86": "",
+    "87": "",
+    "88": "",
+    "89": "",
+    "90": "",
+    "91": "",
+    "92": "",
+    "93": "",
+    "94": "",
+    "95": "",
+    "96": "",
+    "97": "",
+    "98": "",
+    "99": "",
+}
+
+RAC_SKILLS = {
+    "1": "",
     "2": "",
     "3": "",
     "4": "",
@@ -125,6 +329,108 @@ ALL_SKILLS = {
     "22": "",
     "23": "",
     "24": "",
+    "25": "",
+    "26": "",
+    "27": "",
+    "28": "",
+    "29": "",
+    "30": "",
+    "31": "",
+    "32": "",
+    "33": "",
+    "34": "Asura Destiny",
+    "35": "",
+    "36": "",
+    "37": "",
+    "38": "",
+    "39": "",
+    "40": "",
+    "41": "",
+    "42": "",
+    "43": "",
+    "44": "",
+    "45": "",
+    "46": "",
+    "47": "",
+    "48": "",
+    "49": "",
+    "50": "",
+    "51": "",
+    "52": "",
+    "53": "",
+    "54": "",
+    "55": "",
+    "56": "",
+    "57": "",
+    "58": "",
+    "59": "",
+    "60": "",
+    "61": "",
+    "62": "",
+    "63": "",
+    "64": "",
+    "65": "",
+    "66": "",
+    "67": "",
+    "68": "",
+    "69": "",
+    "70": "",
+    "71": "",
+    "72": "",
+    "73": "",
+    "74": "",
+    "75": "",
+    "76": "",
+    "77": "",
+    "78": "",
+    "79": "",
+    "80": "",
+    "81": "",
+    "82": "",
+    "83": "",
+    "84": "",
+    "85": "",
+    "86": "",
+    "87": "",
+    "88": "",
+    "89": "",
+    "90": "",
+    "91": "",
+    "92": "",
+    "93": "",
+    "94": "",
+    "95": "",
+    "96": "",
+    "97": "",
+    "98": "",
+    "99": "",
+}
+
+AUTO_SKILLS = {
+    "1": "",
+    "2": "Hustle",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": "Marksman",
+    "16": "",
+    "17": "",
+    "18": "",
+    "19": "",
+    "20": "",
+    "21": "",
+    "22": "",
+    "23": "",
+    "24": "Debilitate",
     "25": "",
     "26": "",
     "27": "",
@@ -200,7 +506,6 @@ ALL_SKILLS = {
     "97": "",
     "98": "",
     "99": "",
-    # "": ("", , , , , ""),
 }
 
 # Character ID's
@@ -517,11 +822,11 @@ class mytestapp(tk.Tk):
         skillIDNameList = []
         # max_width = 0
         for val in CMD_IDS:
-            if val in ALL_SKILLS:
+            if val in CMD_SKILLS:
                 # tmp_str = val + " - " + ALL_SKILLS[val][0]
                 # if len(tmp_str) > max_width:
                 #     max_width = len(tmp_str)
-                skillIDNameList.append(val + " - " + ALL_SKILLS[val])
+                skillIDNameList.append(val + " - " + CMD_SKILLS[val])
             else:
                 skillIDNameList.append(val + " - None")
         self.skillIDNameList = skillIDNameList
@@ -730,17 +1035,17 @@ class mytestapp(tk.Tk):
         # Listboxes
         tab1ListBoxCMD = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(CMD_IDS)):
-            tab1ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]]))
+            tab1ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(CMD_SKILLS[CMD_IDS[i]]))
         tab1ListBoxCMD.grid(column=0, row=1)
 
         tab1ListBoxPAS = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(PAS_IDS)):
-            tab1ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]]))
+            tab1ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(PAS_SKILLS[PAS_IDS[i]]))
         tab1ListBoxPAS.grid(column=1, row=1)
 
         tab1ListBoxAUT = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(AUTO_IDS)):
-            tab1ListBoxAUT.insert(i, " " + str(AUTO_IDS[i]) + " - " + str(ALL_SKILLS[AUTO_IDS[i]]))
+            tab1ListBoxAUT.insert(i, " " + str(AUTO_IDS[i]) + " - " + str(AUTO_SKILLS[AUTO_IDS[i]]))
         tab1ListBoxAUT.grid(column=2, row=1)
 
         # Save Characters Changes
@@ -938,17 +1243,17 @@ class mytestapp(tk.Tk):
         # Listboxes
         tab2ListBoxCMD = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(CMD_IDS)):
-            tab2ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]]))
+            tab2ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(CMD_SKILLS[CMD_IDS[i]]))
         tab2ListBoxCMD.grid(column=0, row=1)
 
         tab2ListBoxPAS = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(PAS_IDS)):
-            tab2ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]]))
+            tab2ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(PAS_SKILLS[PAS_IDS[i]]))
         tab2ListBoxPAS.grid(column=1, row=1)
 
         tab2ListBoxRAC = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(RAC_IDS)):
-            tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(ALL_SKILLS[RAC_IDS[i]]))
+            tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(RAC_SKILLS[RAC_IDS[i]]))
         tab2ListBoxRAC.grid(column=2, row=1)
 
         # Save Characters Changes
@@ -1173,7 +1478,6 @@ class mytestapp(tk.Tk):
                 # Level
                 tmp_val = format(int(char["level"]), "x")
                 c_lvl_write = char["start_add"] + int(CHAR_LVL[0], 16)
-                print(char["start_add"])
                 self.writeHexBytes(self.save_bytes, tmp_val, c_lvl_write, CHAR_LVL[1], add_is_dec=True)
                 # EXP
                 tmp_val = format(int(char["exp"]), "x")
