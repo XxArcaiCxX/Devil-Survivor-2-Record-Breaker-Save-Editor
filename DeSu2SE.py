@@ -56,330 +56,150 @@ DE_RAC = ("0x2CC", 1)
 
 # Skill Information
 
-CMD_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
-             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
-             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
-             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
-             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
-             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
-             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
-             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
-             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
-             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
-             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
-             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
-             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
-             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
-             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
-             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+CMD_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+           '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+           '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+           '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+           '40', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+           '50', '51', '52', '53', '54', '55', '56', '57', '58', '59',
+           '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
+           '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
+           '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
+           '90', '91', '92', '93', '94', '95', '96', '97', '98', '99')
 
-PAS_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
-             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
-             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
-             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
-             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
-             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
-             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
-             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
-             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
-             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
-             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
-             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
-             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
-             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
-             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
-             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+PAS_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+           '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+           '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+           '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+           '40', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+           '50', '51', '52', '53', '54', '55', '56', '57', '58', '59',
+           '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
+           '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
+           '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
+           '90', '91', '92', '93', '94', '95', '96', '97', '98', '99')
 
-AUTO_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
-             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
-             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
-             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
-             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
-             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
-             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
-             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
-             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
-             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
-             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
-             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
-             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
-             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
-             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
-             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+AUTO_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+            '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+            '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+            '40', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+            '50', '51', '52', '53', '54', '55', '56', '57', '58', '59',
+            '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
+            '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
+            '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99')
 
-RAC_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
-             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
-             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
-             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
-             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
-             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
-             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
-             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
-             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
-             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
-             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
-             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
-             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
-             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
-             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
-             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+RAC_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+           '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+           '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+           '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+           '40', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+           '50', '51', '52', '53', '54', '55', '56', '57', '58', '59',
+           '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
+           '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
+           '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
+           '90', '91', '92', '93', '94', '95', '96', '97', '98', '99')
 
 ALL_SKILLS = {
-    "1": ("Agi", 0, 1, 1, 0, "Weak Fire damage. 1 enemy."),
-    "2": ("Agilao", 0, 4, 2, 0, "Medium Fire damage. 1 enemy."),
-    "3": ("Agidyne", 0, 10, 3, 0, "Heavy Fire damage. 1 enemy."),
-    "4": ("Maragi", 0, 7, 1, 2, "Weak Fire damage. All enemies."),
-    "5": ("Maragion", 0, 16, 2, 2, "Medium Fire damage. All enemies."),
-    "6": ("Maragidyne", 0, 28, 3, 2, "Heavy Fire damage. All enemies."),
-    "7": ("Fire Breath", 0, 17, 1, 1, "1~4 hits weak Fire damage. Multiple enemies."),
-    "8": ("Trisagion", 0, 18, 4, 0, "Severe Fire damage. 1 enemy"),
-    "9": ("Ragnarok", 0, 31, 2, 1, "1~4 hits medium Fire damage. Muliple enemies."),
-    "a": ("Bufu", 1, 1, 1, 0, "Weak Ice damage. 1 enemy."),
-    "b": ("Bufula", 1, 4, 2, 0, "Medium Ice damage. 1 enemy."),
-    "c": ("Bufudyne", 1, 10, 3, 0, "Heavy Ice damage. 1 enemy."),
-    "d": ("Mabufu", 1, 7, 1, 2, "Weak Ice damage. All enemies."),
-    "e": ("Mabufula", 1, 16, 2, 2, "Medium Ice damage. All enemies."),
-    "f": ("Mabufudyne", 1, 28, 3, 2, "Heavy Ice damage. All enemies."),
-    "10": ("Ice Breath", 1, 17, 1, 1, "1~4 hits weak Ice damage. Muliple enemies."),
-    "11": ("Glacial Blast", 1, 18, 2, 1, "1~4 hits medium Ice damage. Multiple enemies."),
-    "12": ("Cold World", 1, 46, 3, 2, "Heavy Ice damage. 15% KO. All enemies."),
-    "4c": ("Breath", 1, 20, 2, 1, "1~5 hits medium Ice damage. Multiple enemies."),
-    "13": ("Zio", 2, 1, 1, 0, "Weak Elec damage. 1 enemy."),
-    "14": ("Zionga", 2, 4, 2, 0, "Medium Elec damage. 1 enemy."),
-    "15": ("Ziodyne", 2, 10, 3, 0, "Heavy Elec damage. 1 enemy."),
-    "16": ("Mazio", 2, 7, 1, 2, "Weak Elec damage. All enemies."),
-    "17": ("Mazionga", 2, 16, 2, 2, "Medium Elec damage. All enemies."),
-    "18": ("Maziodyne", 2, 28, 3, 2, "Heavy Elec damage. All enemies."),
-    "19": ("Shock", 2, 17, 1, 1, "1~4 hits weak Elec damage. Muliple enemies."),
-    "1a": ("Thunder Reign", 2, 18, 4, 2, "Severe Elec damage. All enemies."),
-    "1b": ("Charming Bolt", 2, 41, 3, 2, "Heavy Elec damage. 25% Panic. All enemies."),
-    "1c": ("Zan", 3, 1, 1, 0, "Weak Force damage. 1 enemy."),
-    "1d": ("Zanma", 3, 4, 2, 0, "Medium Force damage. 1 enemy."),
-    "1e": ("Zandyne", 3, 10, 3, 0, "Heavy Force damage. 1 enemy."),
-    "1f": ("Mazan", 3, 7, 1, 2, "Weak Force damage. All enemies."),
-    "20": ("Mazanma", 3, 16, 2, 2, "Medium Force damage. All enemies."),
-    "21": ("Mazandyne", 3, 28, 3, 2, "Heavy Force damage. All enemies."),
-    "22": ("Wind Breath", 3, 17, 1, 1, "1~4 hits weak Force damage. Muliple enemies."),
-    "23": ("Deadly Wind", 3, 18, 4, 0, "Severe Force damage. 1 enemy."),
-    "24": ("Floral Gust", 3, 31, 2, 1, "1~4 hits medium Force damage. Muliple enemies."),
-    "25": ("Megido", 4, 21, 1, 2, "Weak Almighty damage. All enemies."),
-    "26": ("Megidola", 4, 36, 2, 2, "Medium Almighty damage. All enemies."),
-    "27": ("Megidolaon", 4, 56, 3, 2, "Heavy Almighty damage. All enemies."),
-    "28": ("Great Logos", 4, 66, 4, 2, "Severe Almighty damage. All enemies."),
-    "29": ("Antichthon", 4, 76, 4, 2, "Severe Almighty damage. Debilitate. All enemies."),
-    "2a": ("Babylon Goblet", 4, 61, 2, 2, "Medium Almighty damage. 25% Panic."),
-    "2b": ("Holy Wrath", 4, 41, 2, 2, "50% additional damage VS Chaos."),
-    "2c": ("Judgement", 4, 41, 2, 2, "50% additional damage VS Neutral."),
-    "2d": ("Sea of Chaos", 4, 41, 1, 2, "50% additional damage VS Law."),
-    "2e": ("Life Drain", 4, 1, 1, 0, "Weak Almighty damage. Drain HP. 1 enemy."),
-    "2f": ("Spirit Drain", 4, 1, 1, 0, "Weak Almighty damage. Drain MP. 1 enemy."),
-    "30": ("Energy Drain", 4, 1, 1, 0, "Weak Almighty damage. Drain HP/MP. 1 enemy."),
-    "47": ("Strange Ray", 4, 1, 6, 0, "Almighty attack reduce target MP to 50%."),
-    "48": ("Enigmatic Ray", 4, 6, 6, 2, "???"),
-    "49": ("Macca Beam", 4, 1, 6, 0, "Almighty attack reduce target Macca to 20%."),
-    "4a": ("Wastrel Beam", 4, 6, 6, 0, "Almighty attack reduce target Macca to 50%"),
-    "4b": ("Crushing Wave", 4, 6, 6, 0, "Almighty attack reduce target HP to 1."),
-    "4d": ("Death's Door", 4, 6, 6, 2, "All Sick enemies' HP reduced to 1."),
-    "c2": ("Desperate Hit", 4, 36, 1, 1, "1~5 hits Almighty damage. Multiple enemies."),
-    "31": ("Mudo", 5, 2, 5, 0, "Dark magic. 30% KO 1 enemy."),
-    "32": ("Mudoon", 5, 6, 5, 0, "Dark magic. 55% KO 1 enemy."),
-    "33": ("Mamudo", 5, 14, 5, 2, "Dark magic. 30% KO all enemies."),
-    "34": ("Mamudoon", 5, 26, 5, 2, "Dark magic. 55% KO all enemies."),
-    "35": ("Die for Me!", 5, 41, 5, 2, "Dark magic. 80% KO all enemies."),
-    "36": ("Hama", 6, 2, 5, 0, "Light magic. 30% KO 1 enemy."),
-    "37": ("Hamaon", 6, 6, 5, 0, "Light magic. 55% KO 1 enemy."),
-    "38": ("Mahama", 6, 14, 5, 2, "Light magic. 30% KO all enemies."),
-    "39": ("Mahamaon", 6, 26, 5, 2, "Light magic. 55% KO all enemies."),
-    "3a": ("Judgement Light", 6, 41, 5, 2, "Light magic. 80% KO all enemies."),
-    "3b": ("Dormina", 7, 1, 0, 0, "90% Sleep. 1 enemy."),
-    "3c": ("Lullaby", 7, 7, 0, 2, "70% Sleep. All enemies."),
-    "3d": ("Poisma", 7, 1, 0, 0, "90% Poison. 1 enemy."),
-    "3e": ("Poison Breath", 7, 7, 0, 2, "70% Poison. All enemies."),
-    "3f": ("Shibaboo", 7, 1, 0, 0, "50% Bind an enemy."),
-    "40": ("Bind Voice", 7, 11, 0, 2, "50% Bind all enemies."),
-    "41": ("Pulpina", 7, 1, 0, 0, "90% Panic. 1 enemy."),
-    "42": ("Panic Voice", 7, 11, 0, 2, "70% Panic. All enemies."),
-    "43": ("Cough", 7, 14, 0, 0, "90% Sick. 1 enemy."),
-    "44": ("Pandemic Bomb", 7, 7, 0, 2, "70% Sick. All Enemies."),
-    "45": ("Ancient Curse", 7, 36, 0, 2, "80% random ailment. All enemies."),
-    "46": ("Shivering Taboo", 7, 36, 0, 2, "70% random ailment. All enemies."),
-    "51": ("Dia", 8, 1, 0, 4, "Heal HP for ally. Low."),
-    "52": ("Diarama", 8, 5, 0, 4, "Heal HP for ally. Medium."),
-    "53": ("Diarahan", 8, 12, 0, 4, "Heal HP for ally. High."),
-    "54": ("Media", 8, 8, 0, 5, "Heal HP for party. Low."),
-    "55": ("Mediarama", 8, 18, 0, 5, "Heal HP for party. Medium."),
-    "56": ("Mediarahan", 8, 36, 0, 5, "Heal HP for party. High."),
-    "57": ("Salvation", 8, 46, 0, 5, "Heal full HP and cure ailments for party."),
-    "58": ("Patra", 8, 1, 0, 4, "Cure Sleep/Panic/Bind for ally."),
-    "59": ("Me Patra", 8, 11, 0, 5, "Cure Sleep/Panic/Bind for party."),
-    "5a": ("Posumudi", 8, 1, 0, 4, "Cure Poison/Sick for ally."),
-    "5b": ("Nervundi", 8, 1, 7, 7, "???"),
-    "5c": ("Amrita", 8, 16, 0, 4, "Cure all ailments for ally."),
-    "5d": ("Recarm", 8, 16, 0, 4, "Revive ally with little starting HP."),
-    "5e": ("Samerecarm", 8, 36, 0, 4, "Revive ally with full starting HP."),
-    "5f": ("Recarmdra", 8, 1, 0, 5, "User dies. Revive all allies with full HP."),
-    "65": ("Tarukaja", 9, 11, 0, 5, "Increase Attack. All allies."),
-    "66": ("Sukukaja", 9, 11, 0, 5, "Increase Hit/Evade. All allies."),
-    "67": ("Rakukaja", 9, 11, 0, 5, "Increase Defense. All allies."),
-    "68": ("Luster Candy", 9, 46, 0, 5, "Increase all stats. All allies."),
-    "69": ("Dekaja", 9, 6, 0, 2, "Neutralize -kaja effects. All enemies."),
-    "6a": ("Tarunda", 9, 11, 0, 2, "Decrease Attack. All enemies."),
-    "6b": ("Sukunda", 9, 11, 0, 2, "Decrease Hit/Evade. All enemies."),
-    "6c": ("Rakunda", 9, 11, 0, 2, "Decrease Defense. All enemies."),
-    "6d": ("Debilitate", 9, 46, 0, 2, "Decrease all stats. All enemies."),
-    "6e": ("Dekunda", 9, 6, 0, 5, "Neutralize -unda effects. All allies."),
-    "6f": ("Silent Prayer", 9, 11, 0, 6, "Neutralize stat modifications for all."),
-    "70": ("War Cry", 9, 41, 0, 2, "Decrease Attack/Defense. All enemies"),
-    "71": ("Fog Breath", 9, 41, 0, 2, "Decrease Attack/Hit/Evade. All enemies"),
-    "72": ("Acid Breath", 9, 41, 0, 2, "Decrease Defense/Hit/Evade. All enemies"),
-    "73": ("Taunt", 9, 16, 0, 2, "Decrease Defense. Increase Attack. All enemies."),
-    "75": ("Panic Caster", 9, 46, 0, 3, "User Panic. Temporary increase in magic damage."),
-    "76": ("Tetrakarn", 9, 46, 0, 5, "Reflect Phys/Gun damage once."),
-    "77": ("Makarakarn", 9, 46, 0, 5, "Reflect magic damage once."),
-    "78": ("Tetraja", 9, 11, 0, 5, "Nullify Light/Dark magic once."),
-    "79": ("Charge", 9, 5, 0, 3, "User's next Phys/Gun damage 250%."),
-    "7a": ("Concentrate", 9, 7, 0, 3, "User's next magic damage 250%."),
-    "7b": ("Blood Ritual", 9, 21, 0, 3, "Luster Candy. Reduce user's HP to 1."),
-    "8a": ("Doping", 9, 41, 0, 5, "All allies' HP 133%"),
-    "8b": ("Angelic Order", 9, 21, 0, 4, "Bestows Smirk. 1 ally."),
-    "7c": ("Sabbatma", 10, 16, 0, 4, "Summon/return 1 ally to stock."),
-    "7d": ("Invitation", 10, 41, 0, 4, "Summon/return 1 ally to stock and revive if dead."),
-    "7f": ("Bad Company", 10, 11, 0, 5, "Summon highest level allies from stock."),
-    "89": ("Trafuri", 10, 1, 0, 5, "Guaranteed escape from random battles."),
-    "8c": ("Estoma Sword", 10, 21, 0, 7, "Used in maps. Hit enemies to banish them."),
-    "8d": ("Call Ally", 10, 1, 0, 3, "Dummy"),
-    "97": ("Lunge", 11, 2, 1, 0, "Weak Phys damage. High Crit. Low Acc. 1 enemy."),
-    "98": ("Oni-Kagura", 11, 5, 2, 0, "Medium Phys damage. High Crit. Low Acc. 1 enemy."),
-    "99": ("Mortal Jihad", 11, 9, 3, 0, "Heavy Phys damage. High Crit. Low Acc. 1 enemy."),
-    "9a": ("Critical Wave", 11, 6, 1, 2, "Weak Phys damage. High Crit. Low Acc. All enemies."),
-    "9b": ("Megaton Press", 11, 13, 2, 2, "Medium Phys damage. High Crit. Low Acc. All enemies."),
-    "9c": ("Titanomachia", 11, 26, 3, 2, "Heavy Phys damage. High Crit. Low Acc. All enemies."),
-    "9d": ("Gram Slice", 11, 1, 1, 0, "Weak Phys damage. 1 enemy."),
-    "9e": ("Fatal Sword", 11, 4, 2, 0, "Medium Phys damage. 1 enemy."),
-    "9f": ("Berserker God", 11, 8, 3, 0, "Heavy Phys damage. 1 enemy."),
-    "a0": ("Heat Wave", 11, 7, 1, 2, "Weak Phys damage. All enemies."),
-    "a1": ("Javelin Rain", 11, 17, 2, 2, "Medium Phys damage. All enemies."),
-    "a2": ("Hades Blast", 11, 28, 3, 2, "Heavy Phys damage. All enemies."),
-    "a3": ("Bouncing Claw", 11, 1, 1, 1, "1~3 hits weak Phys damage. 1 enemy."),
-    "a4": ("Damascus Claw", 11, 3, 2, 1, "1~3 hits medium Phys damage. 1 enemy."),
-    "a5": ("Nihil Claw", 11, 7, 3, 1, "1~3 hits heavy Phys damage. 1 enemy."),
-    "a6": ("Scratch Dance", 11, 5, 1, 1, "1~3 hits weak Phys damage. Multiple enemies."),
-    "a7": ("Axel Claw", 11, 11, 2, 1, "1~3 hits medium Phys damage. Multiple enemies."),
-    "a8": ("Madness Nails", 11, 22, 3, 1, "1~3 hits heavy Phys damage. Multiple enemies."),
-    "a9": ("Fang Breaker", 11, 8, 1, 0, "Weak Phys damage. Tarunda. 1 enemy."),
-    "aa": ("Dream Fist", 11, 5, 1, 0, "Weak Phys damage. 70% Sleep. 1 enemy."),
-    "ab": ("Purple Smoke", 11, 10, 2, 1, "1~3 hits medium Phys damage. 70% Panic. Multiple enemies."),
-    "ac": ("Carol Hit", 11, 11, 1, 0, "Weak Phys damage. 50% Lost. 1 enemy."),
-    "ae": ("Tetanus Cut", 11, 7, 2, 0, "Medium Phys damage. 70% Sick. 1 enemy."),
-    "b0": ("Blight", 11, 10, 1, 2, "Weak Phys damage. 60% Poison. All enemies."),
-    "b1": ("Occult Flash", 11, 26, 2, 2, "Medium Phys damage. 50% KO. All enemies."),
-    "b2": ("Binding Claw", 11, 7, 2, 0, "Medium Phys damage. 35% Bind. 1 enemy."),
-    "b3": ("Poison Claw", 11, 5, 2, 0, "Medium Phys damage. 70% Poison. 1 enemy."),
-    "b4": ("Iron Judgement", 11, 4, 2, 0, "Medium Phys damage. 1 enemy."),
-    "fb": ("Labrys Strike", 11, 1, 8, 1, "2~3 hits mega Phys damage. Multiple enemies."),
-    "b5": ("Needle Shot", 12, 2, 1, 0, "Weak Gun damage. 1 enemy."),
-    "b6": ("Tathlum Shot", 12, 5, 2, 0, "Medium Gun damage. 1 enemy."),
-    "b7": ("Grand Tack", 12, 9, 3, 0, "Heavy Gun damage. 1 enemy."),
-    "b8": ("Riot Gun", 12, 6, 4, 0, "Severe Gun damage. 1 enemy."),
-    "b9": ("Rapid Needle", 12, 13, 1, 2, "Weak Gun damage. All enemies."),
-    "ba": ("Blast Arrow", 12, 26, 2, 2, "Medium Gun damage. All enemies."),
-    "bb": ("Heaven's Bow", 12, 1, 3, 2, "Heavy Gun damage. All enemies."),
-    "bc": ("Dream Needle", 12, 4, 1, 0, "Weak Gun damage. 70% Sleep. 1 enemy."),
-    "bd": ("Toxic Sting", 12, 8, 1, 0, "Weak Gun damage. 70% Poison. 1 enemy."),
-    "be": ("Stun Needle", 12, 7, 1, 0, "Weak Gun damage. 60% Bind. 1 enemy."),
-    "bf": ("Madness Needle", 12, 17, 1, 0, "Weak Gun damage. 70% Panic. 1 enemy."),
-    "c0": ("Stun Needles", 12, 28, 2, 1, "1~3 hits medium Gun damage. 60% Bind. Muliple enemies."),
-    "c1": ("Myriad Arrows", 12, 26, 1, 1, "2~4 hits weak Gun damage. Multiple enemies."),
-    "fc": ("Snake's Fangs", 12, 1, 2, 1, "2~3 hits medium Gun damage. Multiple enemies."),
-    "4e": ("Makakaja", 9, 11, 0, 5, "Increases magic attack."),
-    "4f": ("Marin Karin", 7, 1, 0, 0, "Inflicts the Charm ailment"),
-    "50": ("Sexy Dance", 7, 16, 0, 2, "Inflicts the Charm ailment"),
-    "60": ("Hell Thrust", 11, 24, 3, 1, "2-4 Heavy Attacks. Smirk: Defense down"),
-    "61": ("Thunder Gods", 2, 36, 4, 0, "Severe Elec attack. Smirk: Pierce"),
-    "62": ("Ice Age", 1, 36, 4, 0, "Severe Ice attack. Smirk: Pierce"),
-    "63": ("Makajam", 7, 1, 0, 0, "Inflicts the Mute ailment"),
-    "64": ("Makajamaon", 7, 11, 0, 2, "Inflicts the Mute ailment"),
-    "74": ("Critical Eye", 9, 6, 0, 3, "Next Phys/Gun attack will be a critical hit"),
-    "7e": ("Judgement Strike", 11, 1, 3, 2, "Heavy Phys attack. Smirk: Pierce"),
-    "80": ("Dia", 7, 1, 0, 4, "Heals HP (Might be Asahi's)"),
-    "81": ("Diarama", 7, 1, 0, 4, "Greayly Heals HP (Might be Asahi's)"),
-    "82": ("Media", 7, 1, 0, 5, "Heals HP (Might be Asahi's)"),
-    "83": ("Mediarama", 7, 1, 0, 5, "Greatly Heals HP (Might be Asahi's)"),
-    "84": ("Smile Charge", 9, 46, 0, 3, "Induces Smirk"),
-    "85": ("Magaon", 9, 6, 0, 0, "Removes Smirk"),
-    "86": ("Heavenly Punishment", 12, 1, 3, 2, "Heavy Almighty attack. Smirk: Pierce"),
-    "87": ("Irrational Glimmer", 4, 1, 0, 2, "Inflicts 66% of target's HP as Almighty"),
-    "88": ("Evil-Crushing Flash", 6, 1, 4, 0, "Severe Light Attack. Smirk: Instant Kill"),
-    "8e": ("Glare", 10, 1, 0, 3, "No effect"),
-    "8f": ("Do Nothing", 10, 1, 0, 3, "No effect"),
-    "90": ("No Reaction", 10, 1, 0, 3, "No effect"),
-    "91": ("Forfeit", 9, 1, 0, 0, "Fully decreases attack and magic. Inflicts Mute"),
-    "92": ("Nightmare", 9, 1, 0, 0, "Fully decreases defense. Inflicts Sleep"),
-    "93": ("Bind", 9, 1, 0, 0, "Fully decreases hit/evade rate. Inflicts Brand"),
-    "94": ("Eternal Rest", 4, 31, 0, 6, "Instant kills sleeping targets"),
-    "95": ("Frenzied Chomp", 11, 2, 1, 0, "Weak Phys attack. Inflicts Poison/Bind/Charm"),
-    "96": ("Eat Whole", 11, 10, 1, 3, "Weak Phys attack. Drains Enemy HP"),
-    "ad": ("Mist Rush", 11, 24, 2, 2, "2-4 medium Phys attacks. Inflicts Daze"),
-    "af": ("Dark Sword", 11, 12, 2, 0, "2 medium Phys attacks. Inflicts Mute"),
-    "c3": ("Sleep Shot", 12, 5, 1, 0, "Weak Gun attack. Inflicts Sleep"),
-    "c4": ("Rapid Bind", 12, 10, 2, 1, "1-3 medium Gun attacks. Inflicts Bind"),
-    "c5": ("Head Crush", 11, 1, 2, 0, "Weak Phys atack. Inflicts Daze"),
-    "c6": ("Power Punch", 11, 4, 2, 0, "Medium Phys attack. Smirk: Daze"),
-    "c7": ("Earthquake", 11, 21, 2, 2, "Medium Phys attack. Inflicts Daze"),
-    "c8": ("Assist Attack", 4, 1, 2, 1, "2 medium Almighty attacks"),
-    "c9": ("Assist Attack", 4, 1, 2, 1, "4 medium Almighty attacks"),
-    "ca": ("Assist Attack", 4, 1, 2, 1, "6 medium Almighty attacks"),
-    "cb": ("Assist Attack", 4, 1, 2, 1, "8 medium Almighty attacks"),
-    "cc": ("Assist Attack", 4, 1, 2, 1, "10 medium Almighty attacks"),
-    "cd": ("Assist Attack", 4, 1, 2, 1, "12 medium Almighty attacks"),
-    "ce": ("Assist Attack", 4, 1, 2, 1, "14 medium Almighty attacks"),
-    "cf": ("Assist Attack", 4, 1, 2, 1, "Dummy"),
-    "d0": ("Will of Flame", 9, 26, 0, 5, "Fire attacks pierce until the end of your turn"),
-    "d1": ("Will of Frost", 9, 26, 0, 5, "Ice attacks pierce until the end of your turn"),
-    "d2": ("Will of Thunder", 9, 26, 0, 5, "Elec attacks pierce until the end of your turn"),
-    "d3": ("Will of Wind", 9, 26, 0, 5, "Force attacks pierce until the end of your turn"),
-    "d4": ("Coercion", 10, 26, 0, 2, "Remove press turn icon on enemy's next turn"),
-    "d5": ("Imposing Stance", 10, 41, 0, 2, "Remove press turn icon on enemy's next turn"),
-    "d6": ("Spear of Michael", 11, 6, 2, 0, "Medium Phys attack"),
-    "d7": ("Gungnir", 11, 18, 4, 0, "Severe Phys attack"),
-    "d8": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
-    "d9": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
-    "da": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
-    "db": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
-    "dc": ("Normal Attack", 11, 1, 1, 0, "Asahi performs a basic attack"),
-    "dd": ("Mouth of God", 4, 1, 0, 0, "Instant kill attack"),
-    "de": ("Michael's Strike", 11, 18, 2, 2, "Medium Phys attack"),
-    "df": ("Michael's Syphon", 11, 13, 2, 0, "Medium Phys attack. Drains enemy HP"),
-    "e0": ("Michael's Twin Strike", 11, 16, 2, 1, "2 weak Phys attacks."),
-    "e1": ("Michael's Pierce", 11, 24, 2, 0, "Medium Phys attack"),
-    "e2": ("Cheer", 9, 46, 0, 3, "Induces Smirk"),
-    "e3": ("Gungnir Strike", 11, 34, 3, 2, "Heavy Phys attack"),
-    "e4": ("Gungnir Syphon", 11, 20, 3, 0, "Heave Phys attack. Drains enemy HP"),
-    "e5": ("Gungnir Twin Strike", 11, 28, 2, 1, "2 medium Phys attacks"),
-    "e6": ("Gungnir Pierce", 11, 38, 3, 0, "Heavy Phys attacks"),
-    "e7": ("Gungnir Sever", 11, 43, 2, 1, "6 medium Phys attacks. Low hit rate"),
-    "e8": ("Enduring Cheer", 9, 26, 0, 5, "Grants targets Endure until the end of turn"),
-    "e9": ("Warding Shout", 9, 26, 0, 5, "Prevents status ailments until the next turn"),
-    "ea": ("Pierce Armor", 11, 12, 2, 0, "Medium Phys attack"),
-    "eb": ("Assassin's Nata", 11, 15, 0, 0, "Medium Phys attack. Ailments increase power"),
-    "ec": ("Enmlightenment", 9, 4, 0, 3, "Drains weakness until your next turn"),
-    "ed": ("5.67 Billion Hands", 4, 46, 1, 2, "Weak Almighty attack.Smirk: More power"),
-    "ee": ("Venemous Raga", 7, 61, 0, 2, "Inflicts poison, Sick and Bind"),
-    "ef": ("Dream Raga", 7, 61, 0, 2, "Inflicts Sleep, Panic and Charm"),
-    "f0": ("Temporal Blade", 11, 1, 0, 0, "Might make Phys attack at start of battle. Pierce, instant kill"),
-    "f1": ("Sneak attack", 11, 1, 0, 0, "Might make Phys attack at start of battle. Pierce, instant kill"),
-    "f2": ("Infernal Hail", 1, 26, 2, 2, "Medium Ice attack"),
-    "f3": ("Needlestorm", 3, 26, 2, 2, "Medium Force attack"),
-    "f4": ("Photo Flash", 7, 16, 0, 2, "Inflicts the Daze ailment"),
-    "f5": ("Seducing Shot", 7, 26, 0, 2, "Inflicts the Charm ailment"),
-    "f6": ("Mother's Discipline", 12, 36, 2, 2, "3 medium Gun attacks"),
-    "f7": ("Hellish Brand", 0, 16, 3, 0, "Heavy Fire attack"),
-    "f8": ("Grand Tack", 12, 7, 3, 0, "Heavy Gun attack"),
-    "f9": ("Grand Tack", 12, 7, 3, 0, "Heavy Gun attack"),
-    "fa": ("King Bufula", 1, 20, 2, 2, "Madium Ice attack. Smirk: Defense down"),
-    "fd": ("Adaptative Tactics", 6, 32, 4, 0, "Severe Light attack. Smirk: Instant kill"),
-    "fe": ("Alluring Banter", 6, 32, 4, 0, "Severe Light attack. Smirk: Instant kill"),
-    "ff": ("Dazzle Ray", 6, 32, 4, 0, "Severe Light attack. Smirk: Instant kill"),
+    "1": "Agi",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": "",
+    "16": "",
+    "17": "",
+    "18": "",
+    "19": "",
+    "20": "",
+    "21": "",
+    "22": "",
+    "23": "",
+    "24": "",
+    "25": "",
+    "26": "",
+    "27": "",
+    "28": "",
+    "29": "",
+    "30": "",
+    "31": "",
+    "32": "",
+    "33": "",
+    "34": "",
+    "35": "",
+    "36": "",
+    "37": "",
+    "38": "",
+    "39": "",
+    "40": "",
+    "41": "",
+    "42": "",
+    "43": "",
+    "44": "",
+    "45": "",
+    "46": "",
+    "47": "",
+    "48": "",
+    "49": "",
+    "50": "",
+    "51": "",
+    "52": "",
+    "53": "",
+    "54": "",
+    "55": "",
+    "56": "",
+    "57": "",
+    "58": "",
+    "59": "",
+    "60": "",
+    "61": "",
+    "62": "",
+    "63": "",
+    "64": "",
+    "65": "",
+    "66": "",
+    "67": "",
+    "68": "",
+    "69": "",
+    "70": "",
+    "71": "",
+    "72": "",
+    "73": "",
+    "74": "",
+    "75": "",
+    "76": "",
+    "77": "",
+    "78": "",
+    "79": "",
+    "80": "",
+    "81": "",
+    "82": "",
+    "83": "",
+    "84": "",
+    "85": "",
+    "86": "",
+    "87": "",
+    "88": "",
+    "89": "",
+    "90": "",
+    "91": "",
+    "92": "",
+    "93": "",
+    "94": "",
+    "95": "",
+    "96": "",
+    "97": "",
+    "98": "",
+    "99": "",
     # "": ("", , , , , ""),
 }
 
@@ -537,13 +357,127 @@ ALL_DEMONS = {
     "132": "",
     "133": "",
     "134": "Tyrant Hecate",
+    "135": "",
+    "136": "",
+    "137": "",
+    "138": "",
+    "139": "",
+    "140": "",
+    "141": "",
+    "142": "",
+    "143": "",
+    "144": "",
+    "145": "",
+    "146": "",
+    "147": "",
+    "148": "",
+    "149": "",
+    "150": "",
+    "151": "",
+    "152": "",
+    "153": "",
     "154": "",
+    "155": "",
+    "156": "",
+    "157": "",
+    "158": "",
+    "159": "",
+    "160": "",
+    "161": "",
+    "162": "",
+    "163": "",
+    "164": "",
+    "165": "",
+    "166": "",
+    "167": "",
+    "168": "",
+    "169": "",
+    "170": "",
+    "171": "",
+    "172": "",
+    "173": "",
+    "174": "",
+    "175": "",
+    "176": "",
+    "177": "",
+    "178": "",
+    "179": "",
+    "180": "",
+    "181": "",
+    "182": "",
+    "183": "",
     "184": "Ghost Kudlak",
+    "185": "",
+    "186": "",
+    "187": "",
+    "188": "",
+    "189": "",
+    "190": "",
+    "191": "",
+    "192": "",
+    "193": "",
+    "194": "",
+    "195": "",
     "196": "",
+    "197": "",
+    "198": "",
     "199": "",
+    "200": "",
+    "201": "",
+    "202": "",
+    "203": "",
+    "204": "",
+    "205": "",
+    "206": "",
+    "207": "",
+    "208": "",
+    "209": "",
+    "210": "",
+    "211": "",
+    "212": "",
+    "213": "",
     "214": "Wilder Sleipnir",
     "215": "",
-    "255": ""
+    "216": "",
+    "217": "",
+    "218": "",
+    "219": "",
+    "220": "",
+    "221": "",
+    "222": "",
+    "223": "",
+    "224": "",
+    "225": "",
+    "226": "",
+    "227": "",
+    "228": "",
+    "229": "",
+    "230": "",
+    "231": "",
+    "232": "",
+    "233": "",
+    "234": "",
+    "235": "",
+    "236": "",
+    "237": "",
+    "238": "",
+    "239": "",
+    "240": "",
+    "241": "",
+    "242": "",
+    "243": "",
+    "244": "",
+    "245": "",
+    "246": "",
+    "247": "",
+    "248": "",
+    "249": "",
+    "250": "",
+    "251": "",
+    "252": "",
+    "253": "",
+    "254": "",
+    "255": "Empty"
 }
 
 
@@ -587,7 +521,7 @@ class mytestapp(tk.Tk):
                 # tmp_str = val + " - " + ALL_SKILLS[val][0]
                 # if len(tmp_str) > max_width:
                 #     max_width = len(tmp_str)
-                skillIDNameList.append(val + " - " + ALL_SKILLS[val][0])
+                skillIDNameList.append(val + " - " + ALL_SKILLS[val])
             else:
                 skillIDNameList.append(val + " - None")
         self.skillIDNameList = skillIDNameList
@@ -662,7 +596,7 @@ class mytestapp(tk.Tk):
         # ComboBox
         tab1ComboBox = ttk.Combobox(tab1TopLFrame, values=self.charNameList)
         print(self.charNameList)
-        tab1ComboBox.grid(column=2, row= 0, padx=10, pady=10)
+        tab1ComboBox.grid(column=2, row=0, padx=10, pady=10)
 
         def changeCharacter(*args):
             name = tab1ComboBox.get()
@@ -675,37 +609,37 @@ class mytestapp(tk.Tk):
 
             self.curChar = get_key(name)
             print(self.curChar)
-            tab1txtbLVL.delete(0,5)
+            tab1txtbLVL.delete(0, 5)
             tab1txtbLVL.insert(0, self.curChar["level"])
-            tab1txtbEXP.delete(0,5)
+            tab1txtbEXP.delete(0, 5)
             tab1txtbEXP.insert(0, self.curChar["exp"])
-            tab1txtbHP.delete(0,5)
+            tab1txtbHP.delete(0, 5)
             tab1txtbHP.insert(0, self.curChar["hp"])
-            tab1txtbMP.delete(0,5)
+            tab1txtbMP.delete(0, 5)
             tab1txtbMP.insert(0, self.curChar["mp"])
-            tab1txtbST.delete(0,5)
+            tab1txtbST.delete(0, 5)
             tab1txtbST.insert(0, self.curChar["st"])
-            tab1txtbMA.delete(0,5)
+            tab1txtbMA.delete(0, 5)
             tab1txtbMA.insert(0, self.curChar["ma"])
-            tab1txtbVI.delete(0,5)
+            tab1txtbVI.delete(0, 5)
             tab1txtbVI.insert(0, self.curChar["vi"])
-            tab1txtbAG.delete(0,5)
+            tab1txtbAG.delete(0, 5)
             tab1txtbAG.insert(0, self.curChar["ag"])
-            tab1txtbCMD1.delete(0,5)
+            tab1txtbCMD1.delete(0, 5)
             tab1txtbCMD1.insert(0, self.curChar["cmd1"])
-            tab1txtbCMD2.delete(0,5)
+            tab1txtbCMD2.delete(0, 5)
             tab1txtbCMD2.insert(0, self.curChar["cmd2"])
-            tab1txtbCMD3.delete(0,5)
+            tab1txtbCMD3.delete(0, 5)
             tab1txtbCMD3.insert(0, self.curChar["cmd3"])
-            tab1txtbPAS1.delete(0,5)
+            tab1txtbPAS1.delete(0, 5)
             tab1txtbPAS1.insert(0, self.curChar["pas1"])
-            tab1txtbPAS2.delete(0,5)
+            tab1txtbPAS2.delete(0, 5)
             tab1txtbPAS2.insert(0, self.curChar["pas2"])
-            tab1txtbPAS3.delete(0,5)
+            tab1txtbPAS3.delete(0, 5)
             tab1txtbPAS3.insert(0, self.curChar["pas3"])
-            tab1txtbRAC.delete(0,5)
+            tab1txtbRAC.delete(0, 5)
             tab1txtbRAC.insert(0, self.curChar["rac"])
-            tab1txtbMOV.delete(0,5)
+            tab1txtbMOV.delete(0, 5)
             tab1txtbMOV.insert(0, self.curChar["mov"])
 
         tab1ComboBox.bind("<<ComboboxSelected>>", changeCharacter)
@@ -779,7 +713,7 @@ class mytestapp(tk.Tk):
         tab1txtbMOV.grid(column=3, row=8)
 
         tab1emptylabel = tk.Label(tab1TopLFrame, text="   ")
-        tab1emptylabel.grid(column=0, row= 9)
+        tab1emptylabel.grid(column=0, row=9)
 
         # Skill Frame
         tab1SkillFrame = tk.Frame(tab1TopLFrame, bd="2", relief="sunken")
@@ -796,17 +730,17 @@ class mytestapp(tk.Tk):
         # Listboxes
         tab1ListBoxCMD = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(CMD_IDS)):
-            tab1ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]][0]))
+            tab1ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]]))
         tab1ListBoxCMD.grid(column=0, row=1)
 
         tab1ListBoxPAS = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(PAS_IDS)):
-            tab1ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]][0]))
+            tab1ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]]))
         tab1ListBoxPAS.grid(column=1, row=1)
 
         tab1ListBoxAUT = tk.Listbox(tab1SkillFrame)
         for i in range(1, len(AUTO_IDS)):
-            tab1ListBoxAUT.insert(i, " " + str(AUTO_IDS[i]) + " - " + str(ALL_SKILLS[AUTO_IDS[i]][0]))
+            tab1ListBoxAUT.insert(i, " " + str(AUTO_IDS[i]) + " - " + str(ALL_SKILLS[AUTO_IDS[i]]))
         tab1ListBoxAUT.grid(column=2, row=1)
 
         # Save Characters Changes
@@ -857,7 +791,6 @@ class mytestapp(tk.Tk):
         tk.Button(
             tab1BtmFrame, text="Apply", command=applyCharChange
         ).grid(column=0, row=0, sticky="EW")
-
 
         # Frame for 2nd tab
         tab2Frame = tk.Frame(tabFramesFrame, bd="2", relief="sunken", padx="10", pady="10")
@@ -914,6 +847,8 @@ class mytestapp(tk.Tk):
             tab2txtbPAS3.insert(0, self.curDemon["pas3"])
             tab2txtbRAC.delete(0, 5)
             tab2txtbRAC.insert(0, self.curDemon["rac"])
+            tab2txtbID.delete(0, 5)
+            tab2txtbID.insert(0, self.curDemon["id"])
 
         tab2ComboBox.bind("<<ComboboxSelected>>", changeDemon)
 
@@ -948,6 +883,8 @@ class mytestapp(tk.Tk):
         tab2PAS3.grid(column=2, row=6)
         tab2RAC = tk.Label(tab2TopLFrame, text="Racial:")
         tab2RAC.grid(column=2, row=7)
+        tab2ID = tk.Label(tab2TopLFrame, text="Id:")
+        tab2ID.grid(column=2, row=8)
 
         # Text Boxes
         tab2txtbLVL = tk.Entry(tab2TopLFrame)
@@ -980,8 +917,8 @@ class mytestapp(tk.Tk):
         tab2txtbPAS3.grid(column=3, row=6)
         tab2txtbRAC = tk.Entry(tab2TopLFrame)
         tab2txtbRAC.grid(column=3, row=7)
-        tab2txtbMOV = tk.Entry(tab2TopLFrame)
-        tab2txtbMOV.grid(column=3, row=8)
+        tab2txtbID = tk.Entry(tab2TopLFrame)
+        tab2txtbID.grid(column=3, row=8)
 
         tab2emptylabel = tk.Label(tab2TopLFrame, text="   ")
         tab2emptylabel.grid(column=0, row=9)
@@ -1001,17 +938,17 @@ class mytestapp(tk.Tk):
         # Listboxes
         tab2ListBoxCMD = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(CMD_IDS)):
-            tab2ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]][0]))
+            tab2ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]]))
         tab2ListBoxCMD.grid(column=0, row=1)
 
         tab2ListBoxPAS = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(PAS_IDS)):
-            tab2ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]][0]))
+            tab2ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]]))
         tab2ListBoxPAS.grid(column=1, row=1)
 
         tab2ListBoxRAC = tk.Listbox(tab2SkillFrame)
         for i in range(1, len(RAC_IDS)):
-            tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(ALL_SKILLS[RAC_IDS[i]][0]))
+            tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(ALL_SKILLS[RAC_IDS[i]]))
         tab2ListBoxRAC.grid(column=2, row=1)
 
         # Save Characters Changes
@@ -1019,7 +956,6 @@ class mytestapp(tk.Tk):
 
             print("\n BEFORE APPLY \n " + str(self.demonList))
             if self.curDemon != {}:
-
                 index = tab2ComboBox.current()
                 self.curDemon = self.demonList[index]
 
@@ -1039,6 +975,7 @@ class mytestapp(tk.Tk):
                 self.curDemon["pas2"] = tab2txtbPAS2.get()
                 self.curDemon["pas3"] = tab2txtbPAS3.get()
                 self.curDemon["rac"] = tab2txtbRAC.get()
+                self.curDemon["id"] = tab2txtbID.get()
 
                 print("\n AFTER APPLY \n " + str(self.demonList))
 
@@ -1157,25 +1094,22 @@ class mytestapp(tk.Tk):
                         "level": int(self.getHexStr(self.save_bytes, d_lvl_add, DE_LVL[1], add_is_dec=True), 16),
                         "exp": int(self.getHexStr(self.save_bytes, d_exp_add, DE_EXP[1], add_is_dec=True), 16),
                         "hp": int(self.getHexStr(self.save_bytes, d_hp_add, DE_HP[1], add_is_dec=True), 16),
-                        "mp": int(self.getHexStr(self.save_bytes, d_mp_add, DE_MP[1], add_is_dec=True),16),
-                        "st": int(self.getHexStr(self.save_bytes, d_st_add, DE_ST[1], add_is_dec=True),16),
-                        "ma": int(self.getHexStr(self.save_bytes, d_ma_add, DE_MA[1], add_is_dec=True),16),
-                        "vi": int(self.getHexStr(self.save_bytes, d_vi_add, DE_VI[1], add_is_dec=True),16),
-                        "ag": int(self.getHexStr(self.save_bytes, d_ag_add, DE_AG[1], add_is_dec=True),16),
-                        "cmd1": int(self.getHexStr(self.save_bytes, d_cmd1_add, DE_CMD1[1], add_is_dec=True),16),
-                        "cmd2": int(self.getHexStr(self.save_bytes, d_cmd2_add, DE_CMD2[1], add_is_dec=True),16),
-                        "cmd3": int(self.getHexStr(self.save_bytes, d_cmd3_add, DE_CMD3[1], add_is_dec=True),16),
-                        "pas1": int(self.getHexStr(self.save_bytes, d_pas1_add, DE_PAS1[1], add_is_dec=True),16),
-                        "pas2": int(self.getHexStr(self.save_bytes, d_pas2_add, DE_PAS2[1], add_is_dec=True),16),
-                        "pas3": int(self.getHexStr(self.save_bytes, d_pas3_add, DE_PAS3[1], add_is_dec=True),16),
-                        "rac": int(self.getHexStr(self.save_bytes, d_rac_add, DE_RAC[1], add_is_dec=True),16),
+                        "mp": int(self.getHexStr(self.save_bytes, d_mp_add, DE_MP[1], add_is_dec=True), 16),
+                        "st": int(self.getHexStr(self.save_bytes, d_st_add, DE_ST[1], add_is_dec=True), 16),
+                        "ma": int(self.getHexStr(self.save_bytes, d_ma_add, DE_MA[1], add_is_dec=True), 16),
+                        "vi": int(self.getHexStr(self.save_bytes, d_vi_add, DE_VI[1], add_is_dec=True), 16),
+                        "ag": int(self.getHexStr(self.save_bytes, d_ag_add, DE_AG[1], add_is_dec=True), 16),
+                        "cmd1": int(self.getHexStr(self.save_bytes, d_cmd1_add, DE_CMD1[1], add_is_dec=True), 16),
+                        "cmd2": int(self.getHexStr(self.save_bytes, d_cmd2_add, DE_CMD2[1], add_is_dec=True), 16),
+                        "cmd3": int(self.getHexStr(self.save_bytes, d_cmd3_add, DE_CMD3[1], add_is_dec=True), 16),
+                        "pas1": int(self.getHexStr(self.save_bytes, d_pas1_add, DE_PAS1[1], add_is_dec=True), 16),
+                        "pas2": int(self.getHexStr(self.save_bytes, d_pas2_add, DE_PAS2[1], add_is_dec=True), 16),
+                        "pas3": int(self.getHexStr(self.save_bytes, d_pas3_add, DE_PAS3[1], add_is_dec=True), 16),
+                        "rac": int(self.getHexStr(self.save_bytes, d_rac_add, DE_RAC[1], add_is_dec=True), 16),
                     }
                     self.demonList.append(d_info)
                     self.demonNameList.append(demon_info)
                     print("Start Address: %x, Demon ID: %s." % (d_start_add, demon_id))
-
-    def applyDemonChange(self):
-        return
 
     def changeTab(self, tab_to_show, tab_button):
         if self.tabShown is tab_to_show:
@@ -1233,11 +1167,149 @@ class mytestapp(tk.Tk):
                 self.processSaveFile()
                 self.createWidgets()
 
+    def saveCharChanges(self):
+        if self.save_bytes:
+            for char in self.charList:
+                # Level
+                tmp_val = format(int(char["level"].get()), "x")
+                c_lvl_write = char["start_add"] + int(CHAR_LVL[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_lvl_write, CHAR_LVL[1])
+                # EXP
+                tmp_val = format(int(char["exp"].get()), "x")
+                c_exp_write = char["start_add"] + int(CHAR_EXP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_exp_write, CHAR_EXP[1])
+                # hp
+                tmp_val = format(int(char["hp"].get()), "x")
+                c_hp_write = char["start_add"] + int(CHAR_HP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_hp_write, CHAR_HP[1])
+                # MP
+                tmp_val = format(int(char["mp"].get()), "x")
+                c_mp_write = char["start_add"] + int(CHAR_MP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_mp_write, CHAR_MP[1])
+                # ST
+                tmp_val = format(int(char["st"].get()), "x")
+                c_st_write = char["start_add"] + int(CHAR_ST[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_st_write, CHAR_ST[1])
+                # MA
+                tmp_val = format(int(char["ma"].get()), "x")
+                c_ma_write = char["start_add"] + int(CHAR_MA[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_ma_write, CHAR_MA[1])
+                # VI
+                tmp_val = format(int(char["vi"].get()), "x")
+                c_vi_write = char["start_add"] + int(CHAR_VI[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_vi_write, CHAR_VI[1])
+                # AG
+                tmp_val = format(int(char["ag"].get()), "x")
+                c_ag_write = char["start_add"] + int(CHAR_AG[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_ag_write, CHAR_AG[1])
+                # CMD1
+                tmp_val = format(int(char["cmd1"].get()), "x")
+                c_cmd1_write = char["start_add"] + int(CHAR_CMD1[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd1_write, CHAR_CMD1[1])
+                # CMD2
+                tmp_val = format(int(char["cmd2"].get()), "x")
+                c_cmd2_write = char["start_add"] + int(CHAR_CMD2[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd2_write, CHAR_CMD2[1])
+                # CMD3
+                tmp_val = format(int(char["cmd3"].get()), "x")
+                c_cmd3_write = char["start_add"] + int(CHAR_CMD3[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd3_write, CHAR_CMD3[1])
+                # PAS1
+                tmp_val = format(int(char["pas1"].get()), "x")
+                c_pas1_write = char["start_add"] + int(CHAR_PAS1[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas1_write, CHAR_PAS1[1])
+                # PAS2
+                tmp_val = format(int(char["pas2"].get()), "x")
+                c_pas2_write = char["start_add"] + int(CHAR_PAS2[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas2_write, CHAR_PAS2[1])
+                # PAS3
+                tmp_val = format(int(char["pas3"].get()), "x")
+                c_pas3_write = char["start_add"] + int(CHAR_PAS3[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas3_write, CHAR_PAS3[1])
+                # RAC
+                tmp_val = format(int(char["rac"].get()), "x")
+                c_rac_write = char["start_add"] + int(CHAR_RAC[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_rac_write, CHAR_RAC[1])
+                # MOV
+                tmp_val = format(int(char["mov"].get()), "x")
+                c_mov_write = char["start_add"] + int(CHAR_MOV[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, c_mov_write, CHAR_MOV[1])
+        return
+
+    def saveDemonChanges(self):
+        if self.save_bytes:
+            for demon in self.demonList:
+                # ID
+                tmp_val = format(int(demon["id"].get()), "x")
+                d_id_write = demon["start_add"] + int(DE_ID[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_id_write, DE_ID[1])
+                # Level
+                tmp_val = format(int(demon["level"].get()), "x")
+                d_lvl_write = demon["start_add"] + int(DE_LVL[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_lvl_write, DE_LVL[1])
+                # EXP
+                tmp_val = format(int(demon["exp"].get()), "x")
+                d_exp_write = demon["start_add"] + int(DE_EXP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_exp_write, DE_EXP[1])
+                # HP
+                tmp_val = format(int(demon["hp"].get()), "x")
+                d_hp_write = demon["start_add"] + int(DE_HP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_hp_write, DE_HP[1])
+                # MP
+                tmp_val = format(int(demon["mp"].get()), "x")
+                d_mp_write = demon["start_add"] + int(DE_MP[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_mp_write, DE_MP[1])
+                # ST
+                tmp_val = format(int(demon["st"].get()), "x")
+                d_st_write = demon["start_add"] + int(DE_ST[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_st_write, DE_ST[1])
+                # MA
+                tmp_val = format(int(demon["ma"].get()), "x")
+                d_ma_write = demon["start_add"] + int(DE_MA[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_ma_write, DE_MA[1])
+                # VI
+                tmp_val = format(int(demon["vi"].get()), "x")
+                d_vi_write = demon["start_add"] + int(DE_VI[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_vi_write, DE_VI[1])
+                # AG
+                tmp_val = format(int(demon["ag"].get()), "x")
+                d_ag_write = demon["start_add"] + int(DE_AG[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_ag_write, DE_AG[1])
+                # CMD1
+                tmp_val = format(int(demon["cmd1"].get()), "x")
+                d_cmd1_write = demon["start_add"] + int(DE_CMD1[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd1_write, DE_CMD1[1])
+                # CMD2
+                tmp_val = format(int(demon["cmd2"].get()), "x")
+                d_cmd2_write = demon["start_add"] + int(DE_CMD2[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd2_write, DE_CMD2[1])
+                # CMD3
+                tmp_val = format(int(demon["cmd3"].get()), "x")
+                d_cmd3_write = demon["start_add"] + int(DE_CMD3[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd3_write, DE_CMD3[1])
+                # PAS1
+                tmp_val = format(int(demon["pas1"].get()), "x")
+                d_pas1_write = demon["start_add"] + int(DE_PAS1[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas1_write, DE_PAS1[1])
+                # PAS2
+                tmp_val = format(int(demon["pas2"].get()), "x")
+                d_pas2_write = demon["start_add"] + int(DE_PAS2[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas2_write, DE_PAS2[1])
+                # PAS3
+                tmp_val = format(int(demon["pas3"].get()), "x")
+                d_pas3_write = demon["start_add"] + int(DE_PAS3[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas3_write, DE_PAS3[1])
+                # RAC
+                tmp_val = format(int(demon["rac"].get()), "x")
+                d_rac_write = demon["start_add"] + int(DE_RAC[0], 16)
+                self.writeHexBytes(self.save_bytes, tmp_val, d_rac_write, DE_RAC[1])
+        return
+
+
     def saveChanges(self):
         if self.saveFilePath and os.path.isdir(self.saveFileDir):
-            self.applyMCChanges()
-            self.applyMiscChanges()
-            self.applyDeChanges()
+            self.saveCharChanges()
+            self.saveDemonChanges()
             edited_dir = os.path.join(self.saveFileDir, "Edited")
             if not os.path.isdir(edited_dir):
                 os.mkdir(edited_dir)
@@ -1254,6 +1326,7 @@ class mytestapp(tk.Tk):
 
     def help(self):
         tk.messagebox.showinfo("Help", "Just don't be stupid lol")
+
 
 if __name__ == "__main__":
     app = mytestapp(None)
