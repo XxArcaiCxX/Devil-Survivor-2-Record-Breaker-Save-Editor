@@ -40,8 +40,8 @@ DE_OFFSET = "0x20"
 DE_ID = ("0x2B6", 1)
 DE_LVL = ("0x2B9", 1)
 DE_EXP = ("0x2BC", 2)
-DE_HP = ("0x2E2", 2)
-DE_MP = ("0x2E4", 2)
+DE_HP = ("0x2C2", 2)
+DE_MP = ("0x2C4", 2)
 DE_ST = ("0x2BE", 1)
 DE_MA = ("0x2BF", 1)
 DE_VI = ("0x2C0", 1)
@@ -55,14 +55,6 @@ DE_PAS3 = ("0x2CB", 1)
 DE_RAC = ("0x2CC", 1)
 
 # Skill Information
-SKILL_TYPE = ("Fire", "Ice", "Electric", "Force", "Almighty",
-              "Ailment", "Healing", "Status", "Physical", "Passive", "Auto")
-
-SKILL_DMG = ("Zero", "Weak", "Medium", "Heavy", "Severe",
-             "KO", "Fixed", "Unknown", "Mega")
-
-SKILL_TARGET = ("Single", "Multiple", "Enemies", "Self",
-                "Ally", "Allies", "All", "Unknown")
 
 CMD_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
@@ -99,6 +91,23 @@ PAS_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd',
              'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
 
 AUTO_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
+             '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
+             '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
+             '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4a', '4f',
+             '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f',
+             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f',
+             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f',
+             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f',
+             '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f',
+             'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af',
+             'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf',
+             'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf',
+             'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df',
+             'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef',
+             'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff')
+
+RAC_IDS = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
              '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f',
              '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f',
              '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f',
@@ -1609,9 +1618,9 @@ class mytestapp(tk.Tk):
         self.save_bytes = None
         self.charValues = {}
         self.curChar = {}
-        self.deValues = {}
-        self.miscValues = {}
+        self.curDemon = {}
         self.charNameList = []
+        self.demonNameList = []
         self.charList = []
         self.demonList = []
         self.vcmd = (self.register(self.validate_int), '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
@@ -1685,13 +1694,6 @@ class mytestapp(tk.Tk):
         tab1Frame = tk.Frame(tabFramesFrame, bd="2", relief="sunken", padx="10", pady="10")
         self.tab1Frame = tab1Frame
         tab1Frame.grid(column=0, row=0, sticky="EW")
-        self.charValues["level"] = tk.StringVar()
-        self.charValues["max_hp"] = tk.StringVar()
-        self.charValues["max_mp"] = tk.StringVar()
-        self.charValues["curr_hp"] = tk.StringVar()
-        self.charValues["curr_mp"] = tk.StringVar()
-        self.charValues["stats"] = []
-        self.charValues["skills"] = []
 
         # Top inner frame for 1st tab
         tab1TopFrame = tk.Frame(tab1Frame)
@@ -1910,13 +1912,192 @@ class mytestapp(tk.Tk):
 
         # Top inner frame for 2nd tab
         tab2TopFrame = tk.Frame(tab2Frame)
-        tab2TopFrame.grid(column=0, row=0, sticky="NW")
+        tab2TopFrame.grid(column=0, row=0, columnspan=2, sticky="NW")
 
         # Top left inner frame for 2nd tab
         tab2TopLFrame = tk.Frame(tab2TopFrame)
         tab2TopLFrame.grid(column=0, row=0, sticky="NW")
-        tab2ComboLabel = tk.Label(tab2TopLFrame, text="Select Character")
+        tab2ComboLabel = tk.Label(tab2TopLFrame, text="Select Demon")
         tab2ComboLabel.grid(column=1, row=0)
+
+        # 2nd ComboBox
+        tab2ComboBox = ttk.Combobox(tab2TopLFrame, values=self.demonNameList)
+        print(self.demonNameList)
+        tab2ComboBox.grid(column=2, row=0, padx=10, pady=10)
+
+        def changeDemon(*args):
+            index = tab2ComboBox.current()
+            self.curDemon = self.demonList[index]
+
+            print(self.curDemon)
+            tab2txtbLVL.delete(0, 5)
+            tab2txtbLVL.insert(0, self.curDemon["level"])
+            tab2txtbEXP.delete(0, 5)
+            tab2txtbEXP.insert(0, self.curDemon["exp"])
+            tab2txtbHP.delete(0, 5)
+            tab2txtbHP.insert(0, self.curDemon["hp"])
+            tab2txtbMP.delete(0, 5)
+            tab2txtbMP.insert(0, self.curDemon["mp"])
+            tab2txtbST.delete(0, 5)
+            tab2txtbST.insert(0, self.curDemon["st"])
+            tab2txtbMA.delete(0, 5)
+            tab2txtbMA.insert(0, self.curDemon["ma"])
+            tab2txtbVI.delete(0, 5)
+            tab2txtbVI.insert(0, self.curDemon["vi"])
+            tab2txtbAG.delete(0, 5)
+            tab2txtbAG.insert(0, self.curDemon["ag"])
+            tab2txtbCMD1.delete(0, 5)
+            tab2txtbCMD1.insert(0, self.curDemon["cmd1"])
+            tab2txtbCMD2.delete(0, 5)
+            tab2txtbCMD2.insert(0, self.curDemon["cmd2"])
+            tab2txtbCMD3.delete(0, 5)
+            tab2txtbCMD3.insert(0, self.curDemon["cmd3"])
+            tab2txtbPAS1.delete(0, 5)
+            tab2txtbPAS1.insert(0, self.curDemon["pas1"])
+            tab2txtbPAS2.delete(0, 5)
+            tab2txtbPAS2.insert(0, self.curDemon["pas2"])
+            tab2txtbPAS3.delete(0, 5)
+            tab2txtbPAS3.insert(0, self.curDemon["pas3"])
+            tab2txtbRAC.delete(0, 5)
+            tab2txtbRAC.insert(0, self.curDemon["rac"])
+
+        tab2ComboBox.bind("<<ComboboxSelected>>", changeDemon)
+
+        # Labels
+        tab2LVL = tk.Label(tab2TopLFrame, text="Level:", padx=50)
+        tab2LVL.grid(column=0, row=1)
+        tab2EXP = tk.Label(tab2TopLFrame, text="Experience:")
+        tab2EXP.grid(column=0, row=2)
+        tab2HP = tk.Label(tab2TopLFrame, text="Health:")
+        tab2HP.grid(column=0, row=3)
+        tab2MP = tk.Label(tab2TopLFrame, text="Mana:")
+        tab2MP.grid(column=0, row=4)
+        tab2ST = tk.Label(tab2TopLFrame, text="Strength:")
+        tab2ST.grid(column=0, row=5)
+        tab2MA = tk.Label(tab2TopLFrame, text="Magic:")
+        tab2MA.grid(column=0, row=6)
+        tab2VI = tk.Label(tab2TopLFrame, text="Vitality:")
+        tab2VI.grid(column=0, row=7)
+        tab2AG = tk.Label(tab2TopLFrame, text="Agility:")
+        tab2AG.grid(column=0, row=8)
+        tab2CMD1 = tk.Label(tab2TopLFrame, text="Command 1:")
+        tab2CMD1.grid(column=2, row=1)
+        tab2CMD2 = tk.Label(tab2TopLFrame, text="Command 2:")
+        tab2CMD2.grid(column=2, row=2)
+        tab2CMD3 = tk.Label(tab2TopLFrame, text="Command 3:")
+        tab2CMD3.grid(column=2, row=3)
+        tab2PAS1 = tk.Label(tab2TopLFrame, text="Passive 1:")
+        tab2PAS1.grid(column=2, row=4)
+        tab2PAS2 = tk.Label(tab2TopLFrame, text="Passive 2:")
+        tab2PAS2.grid(column=2, row=5)
+        tab2PAS3 = tk.Label(tab2TopLFrame, text="Passive 3:")
+        tab2PAS3.grid(column=2, row=6)
+        tab2RAC = tk.Label(tab2TopLFrame, text="Racial:")
+        tab2RAC.grid(column=2, row=7)
+
+        # Text Boxes
+        tab2txtbLVL = tk.Entry(tab2TopLFrame)
+        tab2txtbLVL.grid(column=1, row=1)
+        tab2txtbEXP = tk.Entry(tab2TopLFrame)
+        tab2txtbEXP.grid(column=1, row=2)
+        tab2txtbHP = tk.Entry(tab2TopLFrame)
+        tab2txtbHP.grid(column=1, row=3)
+        tab2txtbMP = tk.Entry(tab2TopLFrame)
+        tab2txtbMP.grid(column=1, row=4)
+        tab2txtbST = tk.Entry(tab2TopLFrame)
+        tab2txtbST.grid(column=1, row=5)
+        tab2txtbMA = tk.Entry(tab2TopLFrame)
+        tab2txtbMA.grid(column=1, row=6)
+        tab2txtbVI = tk.Entry(tab2TopLFrame)
+        tab2txtbVI.grid(column=1, row=7)
+        tab2txtbAG = tk.Entry(tab2TopLFrame)
+        tab2txtbAG.grid(column=1, row=8)
+        tab2txtbCMD1 = tk.Entry(tab2TopLFrame)
+        tab2txtbCMD1.grid(column=3, row=1)
+        tab2txtbCMD2 = tk.Entry(tab2TopLFrame)
+        tab2txtbCMD2.grid(column=3, row=2)
+        tab2txtbCMD3 = tk.Entry(tab2TopLFrame)
+        tab2txtbCMD3.grid(column=3, row=3)
+        tab2txtbPAS1 = tk.Entry(tab2TopLFrame)
+        tab2txtbPAS1.grid(column=3, row=4)
+        tab2txtbPAS2 = tk.Entry(tab2TopLFrame)
+        tab2txtbPAS2.grid(column=3, row=5)
+        tab2txtbPAS3 = tk.Entry(tab2TopLFrame)
+        tab2txtbPAS3.grid(column=3, row=6)
+        tab2txtbRAC = tk.Entry(tab2TopLFrame)
+        tab2txtbRAC.grid(column=3, row=7)
+        tab2txtbMOV = tk.Entry(tab2TopLFrame)
+        tab2txtbMOV.grid(column=3, row=8)
+
+        tab2emptylabel = tk.Label(tab2TopLFrame, text="   ")
+        tab2emptylabel.grid(column=0, row=9)
+
+        # Skill Frame
+        tab2SkillFrame = tk.Frame(tab2TopLFrame, bd="2", relief="sunken")
+        tab2SkillFrame.grid(column=0, row=11, columnspan=4)
+
+        # Skill Labels
+        tab2CMD1label = tk.Label(tab2SkillFrame, text="Command")
+        tab2CMD1label.grid(column=0, row=0)
+        tab2CMD2label = tk.Label(tab2SkillFrame, text="Passive")
+        tab2CMD2label.grid(column=1, row=0)
+        tab2CMD3label = tk.Label(tab2SkillFrame, text="Racial")
+        tab2CMD3label.grid(column=2, row=0)
+
+        # Listboxes
+        tab2ListBoxCMD = tk.Listbox(tab2SkillFrame)
+        for i in range(1, len(CMD_IDS)):
+            tab2ListBoxCMD.insert(i, " " + str(CMD_IDS[i]) + " - " + str(ALL_SKILLS[CMD_IDS[i]][0]))
+        tab2ListBoxCMD.grid(column=0, row=1)
+
+        tab2ListBoxPAS = tk.Listbox(tab2SkillFrame)
+        for i in range(1, len(PAS_IDS)):
+            tab2ListBoxPAS.insert(i, " " + str(PAS_IDS[i]) + " - " + str(ALL_SKILLS[PAS_IDS[i]][0]))
+        tab2ListBoxPAS.grid(column=1, row=1)
+
+        tab2ListBoxRAC = tk.Listbox(tab2SkillFrame)
+        for i in range(1, len(RAC_IDS)):
+            tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(ALL_SKILLS[RAC_IDS[i]][0]))
+        tab2ListBoxRAC.grid(column=2, row=1)
+
+        # Save Characters Changes
+        def applyDemonChange(*args):
+
+            print("\n BEFORE APPLY \n " + str(self.demonList))
+            if self.curDemon != {}:
+
+                index = tab2ComboBox.current()
+                self.curDemon = self.demonList[index]
+
+                # put textbox values in global variable
+                self.curDemon["level"] = tab2txtbLVL.get()
+                self.curDemon["exp"] = tab2txtbEXP.get()
+                self.curDemon["hp"] = tab2txtbHP.get()
+                self.curDemon["mp"] = tab2txtbMP.get()
+                self.curDemon["st"] = tab2txtbST.get()
+                self.curDemon["ma"] = tab2txtbMA.get()
+                self.curDemon["vi"] = tab2txtbVI.get()
+                self.curDemon["ag"] = tab2txtbAG.get()
+                self.curDemon["cmd1"] = tab2txtbCMD1.get()
+                self.curDemon["cmd2"] = tab2txtbCMD2.get()
+                self.curDemon["cmd3"] = tab2txtbCMD3.get()
+                self.curDemon["pas1"] = tab2txtbPAS1.get()
+                self.curDemon["pas2"] = tab2txtbPAS2.get()
+                self.curDemon["pas3"] = tab2txtbPAS3.get()
+                self.curDemon["rac"] = tab2txtbRAC.get()
+
+                print("\n AFTER APPLY \n " + str(self.demonList))
+
+                # put char_info back on list
+                self.demonList[index] = self.curDemon
+
+        # Bottom Frame
+        tab2BtmFrame = tk.Frame(tab2Frame, bd="2", relief="sunken")
+        tab2BtmFrame.grid(column=0, row=2, columnspan=2, sticky="EW", pady="20 0")
+        tab2BtmFrame.columnconfigure(0, weight=1)
+        tk.Button(
+            tab2BtmFrame, text="Apply", command=applyDemonChange
+        ).grid(column=0, row=0, sticky="EW")
 
         # Hide the other tabs, only show first tab
         self.tabShown = self.tab1Frame
@@ -2011,6 +2192,7 @@ class mytestapp(tk.Tk):
                     d_pas2_add = d_start_add + int(DE_PAS2[0], 16)
                     d_pas3_add = d_start_add + int(DE_PAS3[0], 16)
                     d_rac_add = d_start_add + int(DE_RAC[0], 16)
+                    demon_info = ALL_DEMONS[demon_id]
 
                     d_info = {
                         "start_add": d_start_add,
@@ -2032,6 +2214,7 @@ class mytestapp(tk.Tk):
                         "rac": int(self.getHexStr(self.save_bytes, d_rac_add, DE_RAC[1], add_is_dec=True),16),
                     }
                     self.demonList.append(d_info)
+                    self.demonNameList.append(demon_info)
                     print("Start Address: %x, Demon ID: %s." % (d_start_add, demon_id))
 
     def applyDemonChange(self):
