@@ -1171,138 +1171,139 @@ class mytestapp(tk.Tk):
         if self.save_bytes:
             for char in self.charList:
                 # Level
-                tmp_val = format(int(char["level"].get()), "x")
+                tmp_val = format(int(char["level"]), "x")
                 c_lvl_write = char["start_add"] + int(CHAR_LVL[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_lvl_write, CHAR_LVL[1])
+                print(char["start_add"])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_lvl_write, CHAR_LVL[1], add_is_dec=True)
                 # EXP
-                tmp_val = format(int(char["exp"].get()), "x")
+                tmp_val = format(int(char["exp"]), "x")
                 c_exp_write = char["start_add"] + int(CHAR_EXP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_exp_write, CHAR_EXP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_exp_write, CHAR_EXP[1], add_is_dec=True)
                 # hp
-                tmp_val = format(int(char["hp"].get()), "x")
+                tmp_val = format(int(char["hp"]), "x")
                 c_hp_write = char["start_add"] + int(CHAR_HP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_hp_write, CHAR_HP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_hp_write, CHAR_HP[1], add_is_dec=True)
                 # MP
-                tmp_val = format(int(char["mp"].get()), "x")
+                tmp_val = format(int(char["mp"]), "x")
                 c_mp_write = char["start_add"] + int(CHAR_MP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_mp_write, CHAR_MP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_mp_write, CHAR_MP[1], add_is_dec=True)
                 # ST
-                tmp_val = format(int(char["st"].get()), "x")
+                tmp_val = format(int(char["st"]), "x")
                 c_st_write = char["start_add"] + int(CHAR_ST[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_st_write, CHAR_ST[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_st_write, CHAR_ST[1], add_is_dec=True)
                 # MA
-                tmp_val = format(int(char["ma"].get()), "x")
+                tmp_val = format(int(char["ma"]), "x")
                 c_ma_write = char["start_add"] + int(CHAR_MA[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_ma_write, CHAR_MA[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_ma_write, CHAR_MA[1], add_is_dec=True)
                 # VI
-                tmp_val = format(int(char["vi"].get()), "x")
+                tmp_val = format(int(char["vi"]), "x")
                 c_vi_write = char["start_add"] + int(CHAR_VI[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_vi_write, CHAR_VI[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_vi_write, CHAR_VI[1], add_is_dec=True)
                 # AG
-                tmp_val = format(int(char["ag"].get()), "x")
+                tmp_val = format(int(char["ag"]), "x")
                 c_ag_write = char["start_add"] + int(CHAR_AG[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_ag_write, CHAR_AG[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_ag_write, CHAR_AG[1], add_is_dec=True)
                 # CMD1
-                tmp_val = format(int(char["cmd1"].get()), "x")
+                tmp_val = format(int(char["cmd1"]), "x")
                 c_cmd1_write = char["start_add"] + int(CHAR_CMD1[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd1_write, CHAR_CMD1[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd1_write, CHAR_CMD1[1], add_is_dec=True)
                 # CMD2
-                tmp_val = format(int(char["cmd2"].get()), "x")
+                tmp_val = format(int(char["cmd2"]), "x")
                 c_cmd2_write = char["start_add"] + int(CHAR_CMD2[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd2_write, CHAR_CMD2[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd2_write, CHAR_CMD2[1], add_is_dec=True)
                 # CMD3
-                tmp_val = format(int(char["cmd3"].get()), "x")
+                tmp_val = format(int(char["cmd3"]), "x")
                 c_cmd3_write = char["start_add"] + int(CHAR_CMD3[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd3_write, CHAR_CMD3[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_cmd3_write, CHAR_CMD3[1], add_is_dec=True)
                 # PAS1
-                tmp_val = format(int(char["pas1"].get()), "x")
+                tmp_val = format(int(char["pas1"]), "x")
                 c_pas1_write = char["start_add"] + int(CHAR_PAS1[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_pas1_write, CHAR_PAS1[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas1_write, CHAR_PAS1[1], add_is_dec=True)
                 # PAS2
-                tmp_val = format(int(char["pas2"].get()), "x")
+                tmp_val = format(int(char["pas2"]), "x")
                 c_pas2_write = char["start_add"] + int(CHAR_PAS2[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_pas2_write, CHAR_PAS2[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas2_write, CHAR_PAS2[1], add_is_dec=True)
                 # PAS3
-                tmp_val = format(int(char["pas3"].get()), "x")
+                tmp_val = format(int(char["pas3"]), "x")
                 c_pas3_write = char["start_add"] + int(CHAR_PAS3[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_pas3_write, CHAR_PAS3[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_pas3_write, CHAR_PAS3[1], add_is_dec=True)
                 # RAC
-                tmp_val = format(int(char["rac"].get()), "x")
+                tmp_val = format(int(char["rac"]), "x")
                 c_rac_write = char["start_add"] + int(CHAR_RAC[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_rac_write, CHAR_RAC[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_rac_write, CHAR_RAC[1], add_is_dec=True)
                 # MOV
-                tmp_val = format(int(char["mov"].get()), "x")
+                tmp_val = format(int(char["mov"]), "x")
                 c_mov_write = char["start_add"] + int(CHAR_MOV[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, c_mov_write, CHAR_MOV[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, c_mov_write, CHAR_MOV[1], add_is_dec=True)
         return
 
     def saveDemonChanges(self):
         if self.save_bytes:
             for demon in self.demonList:
                 # ID
-                tmp_val = format(int(demon["id"].get()), "x")
+                tmp_val = format(int(demon["id"]), "x")
                 d_id_write = demon["start_add"] + int(DE_ID[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_id_write, DE_ID[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_id_write, DE_ID[1], add_is_dec=True)
                 # Level
-                tmp_val = format(int(demon["level"].get()), "x")
+                tmp_val = format(int(demon["level"]), "x")
                 d_lvl_write = demon["start_add"] + int(DE_LVL[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_lvl_write, DE_LVL[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_lvl_write, DE_LVL[1], add_is_dec=True)
                 # EXP
-                tmp_val = format(int(demon["exp"].get()), "x")
+                tmp_val = format(int(demon["exp"]), "x")
                 d_exp_write = demon["start_add"] + int(DE_EXP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_exp_write, DE_EXP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_exp_write, DE_EXP[1], add_is_dec=True)
                 # HP
-                tmp_val = format(int(demon["hp"].get()), "x")
+                tmp_val = format(int(demon["hp"]), "x")
                 d_hp_write = demon["start_add"] + int(DE_HP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_hp_write, DE_HP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_hp_write, DE_HP[1], add_is_dec=True)
                 # MP
-                tmp_val = format(int(demon["mp"].get()), "x")
+                tmp_val = format(int(demon["mp"]), "x")
                 d_mp_write = demon["start_add"] + int(DE_MP[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_mp_write, DE_MP[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_mp_write, DE_MP[1], add_is_dec=True)
                 # ST
-                tmp_val = format(int(demon["st"].get()), "x")
+                tmp_val = format(int(demon["st"]), "x")
                 d_st_write = demon["start_add"] + int(DE_ST[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_st_write, DE_ST[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_st_write, DE_ST[1], add_is_dec=True)
                 # MA
-                tmp_val = format(int(demon["ma"].get()), "x")
+                tmp_val = format(int(demon["ma"]), "x")
                 d_ma_write = demon["start_add"] + int(DE_MA[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_ma_write, DE_MA[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_ma_write, DE_MA[1], add_is_dec=True)
                 # VI
-                tmp_val = format(int(demon["vi"].get()), "x")
+                tmp_val = format(int(demon["vi"]), "x")
                 d_vi_write = demon["start_add"] + int(DE_VI[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_vi_write, DE_VI[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_vi_write, DE_VI[1], add_is_dec=True)
                 # AG
-                tmp_val = format(int(demon["ag"].get()), "x")
+                tmp_val = format(int(demon["ag"]), "x")
                 d_ag_write = demon["start_add"] + int(DE_AG[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_ag_write, DE_AG[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_ag_write, DE_AG[1], add_is_dec=True)
                 # CMD1
-                tmp_val = format(int(demon["cmd1"].get()), "x")
+                tmp_val = format(int(demon["cmd1"]), "x")
                 d_cmd1_write = demon["start_add"] + int(DE_CMD1[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd1_write, DE_CMD1[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd1_write, DE_CMD1[1], add_is_dec=True)
                 # CMD2
-                tmp_val = format(int(demon["cmd2"].get()), "x")
+                tmp_val = format(int(demon["cmd2"]), "x")
                 d_cmd2_write = demon["start_add"] + int(DE_CMD2[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd2_write, DE_CMD2[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd2_write, DE_CMD2[1], add_is_dec=True)
                 # CMD3
-                tmp_val = format(int(demon["cmd3"].get()), "x")
+                tmp_val = format(int(demon["cmd3"]), "x")
                 d_cmd3_write = demon["start_add"] + int(DE_CMD3[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd3_write, DE_CMD3[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_cmd3_write, DE_CMD3[1], add_is_dec=True)
                 # PAS1
-                tmp_val = format(int(demon["pas1"].get()), "x")
+                tmp_val = format(int(demon["pas1"]), "x")
                 d_pas1_write = demon["start_add"] + int(DE_PAS1[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_pas1_write, DE_PAS1[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas1_write, DE_PAS1[1], add_is_dec=True)
                 # PAS2
-                tmp_val = format(int(demon["pas2"].get()), "x")
+                tmp_val = format(int(demon["pas2"]), "x")
                 d_pas2_write = demon["start_add"] + int(DE_PAS2[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_pas2_write, DE_PAS2[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas2_write, DE_PAS2[1], add_is_dec=True)
                 # PAS3
-                tmp_val = format(int(demon["pas3"].get()), "x")
+                tmp_val = format(int(demon["pas3"]), "x")
                 d_pas3_write = demon["start_add"] + int(DE_PAS3[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_pas3_write, DE_PAS3[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_pas3_write, DE_PAS3[1], add_is_dec=True)
                 # RAC
-                tmp_val = format(int(demon["rac"].get()), "x")
+                tmp_val = format(int(demon["rac"]), "x")
                 d_rac_write = demon["start_add"] + int(DE_RAC[0], 16)
-                self.writeHexBytes(self.save_bytes, tmp_val, d_rac_write, DE_RAC[1])
+                self.writeHexBytes(self.save_bytes, tmp_val, d_rac_write, DE_RAC[1], add_is_dec=True)
         return
 
 
