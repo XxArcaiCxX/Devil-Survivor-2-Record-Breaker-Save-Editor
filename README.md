@@ -11,7 +11,7 @@ This is a save editor for the 3DS game Devil Survivor 2 Record Breaker.
     * If it has 100KB of size then it's an empty save file
     * Make sure you select a non-empty save file
     
-####IMAGE
+![SaveFiles](https://github.com/XxArcaiCxX/DeSu2SE/blob/media/DeSu2Savefiles.png?raw=true)
 
 * Open the save file in Editor then select the tab of what you want to edit and press apply after every change
 * All the skill numbers are listed on the listboxes at the bottom
