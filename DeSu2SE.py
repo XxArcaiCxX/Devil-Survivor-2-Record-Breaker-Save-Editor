@@ -374,7 +374,7 @@ PAS_SKILLS = {
     "48": "Elec Repel",
     "49": "Force Repel",
     "50": "Watchful",
-    "51": "Vigilant?",
+    "51": "Endure",
     "52": "Life Aid",
     "53": "Life Lift",
     "54": "Mana Aid",
