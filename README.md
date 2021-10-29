@@ -17,9 +17,11 @@ This is a save editor for the 3DS game Devil Survivor 2 Record Breaker.
 * All the skill numbers are listed on the listboxes at the bottom
 * Keep in mind every value is an Integer and therefore you shouldn't use any hex (the save editor converts by itself)
 
-## Known Issue
+## Known Issues
 When you restore the save file in JKSM it may give you an error if you have empty save slots.
-Simply restart your console because the changes will still be applied. 
+This is a JKSM bug, simply restart your console because the changes will still be applied. 
+
+If you have an empty demon slot you won't be able to change it. Make sure you have demons beforehand
 
 ### Happy Editing Hee-ho
 ![Hee-ho](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-wixmp-ed30a86b8c4ca887773594c2.wixmp.com%2Ff%2Fd61d9068-1085-4f27-a191-a45c02e6c921%2Fd7ma2n6-db03afbd-0542-4ec9-9865-4938866b280d.png%2Fv1%2Ffill%2Fw_205%2Ch_200%2Cstrp%2Fjack_frost_he_ho_by_flaremor_d7ma2n6-200h.png%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzkyIiwicGF0aCI6IlwvZlwvZDYxZDkwNjgtMTA4NS00ZjI3LWExOTEtYTQ1YzAyZTZjOTIxXC9kN21hMm42LWRiMDNhZmJkLTA1NDItNGVjOS05ODY1LTQ5Mzg4NjZiMjgwZC5wbmciLCJ3aWR0aCI6Ijw9NDAxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.JBZM-ah-oZOSKpB0m8dr4V-4DxCn7uhMa39bRHUuRwA&f=1&nofb=1)
