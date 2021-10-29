@@ -1326,7 +1326,7 @@ class mytestapp(tk.Tk):
             tab2ListBoxRAC.insert(i, " " + str(RAC_IDS[i]) + " - " + str(RAC_SKILLS[RAC_IDS[i]]))
         tab2ListBoxRAC.grid(column=2, row=1)
 
-        tab2ListBoxID = tk.Listbox(tab2SkillFrame)
+        tab2ListBoxID = tk.Listbox(tab2SkillFrame, width=23)
         for i in range(0, len(DEMON_IDS)):
             tab2ListBoxID.insert(i, " " + str(DEMON_IDS[i]) + " - " + str(ALL_DEMONS[DEMON_IDS[i]]))
         tab2ListBoxID.grid(column=3, row=1)
