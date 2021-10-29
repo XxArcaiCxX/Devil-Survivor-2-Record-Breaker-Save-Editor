@@ -13,7 +13,7 @@ STAT_TXT = ("ST", "MA", "VI", "AG")
 
 # Characters
 CHAR_OFFSET = "0x24"
-CHAR_ID = ("0x74", 3)
+CHAR_ID = ("0x75", 2)
 CHAR_LVL = ("0x79", 1)
 CHAR_EXP = ("0x7C", 2)
 CHAR_HP = ("0x82", 2)
@@ -37,7 +37,7 @@ MISC_MACCA = ("0x6C4", 4)
 # Demons
 DE_NUM_MAX = 27
 DE_OFFSET = "0x20"
-DE_ID = ("0x2B6", 1)
+DE_ID = ("0x2B6", 2)
 DE_LVL = ("0x2B9", 1)
 DE_EXP = ("0x2BC", 2)
 DE_HP = ("0x2C2", 2)
@@ -579,18 +579,18 @@ AUTO_SKILLS = {
 # Character ID's
 ALL_CHARS = {
     "0": "MC",
-    "40006": "Fumi",
-    "30005": "Yamato",
-    "9000b": "Keita",
-    "8000a": "Makoto",
-    "70009": "Jungo",
-    "a000c": "Airi",
-    "b000d": "Joe",
-    "60008": "Otome",
-    "50007": "Daichi",
-    "c000e": "Hinako",
-    "20004": "Io",
-    "10003": "Ronaldo"
+    "400": "Fumi",
+    "300": "Yamato",
+    "900": "Keita",
+    "800": "Makoto",
+    "700": "Jungo",
+    "a00": "Airi",
+    "b00": "Joe",
+    "600": "Otome",
+    "500": "Daichi",
+    "c00": "Hinako",
+    "200": "Io",
+    "100": "Ronaldo"
 }
 
 # Demon Information
@@ -850,7 +850,9 @@ ALL_DEMONS = {
     "252": "Human JP'S Agent(?)",
     "253": "Human JP'S Agent(?)",
     "254": "Human JP'S Agent(?)",
-    "255": "Human JP'S Agent(?)"
+    "255": "Human JP'S Agent(?)",
+    "256": "Human ?",
+    "65535": "Empty"
 }
 
 
@@ -1395,6 +1397,7 @@ class mytestapp(tk.Tk):
                 c_start_add = int(CHAR_OFFSET, 16) * x
                 c_id_add = c_start_add + int(CHAR_ID[0], 16)
                 char_id = self.getHexStr(self.save_bytes, c_id_add, CHAR_ID[1], add_is_dec=True)
+                print(char_id)
                 if char_id in ALL_CHARS:
                     c_id_add = c_start_add + int(CHAR_ID[0], 16)
                     c_lvl_add = c_start_add + int(CHAR_LVL[0], 16)
